@@ -3,37 +3,41 @@ using UnityEngine;
 
 namespace com.N8Dev.Brackeys.GridMovement
 {
-    public static class GridDirections
+    [Serializable]
+    public class GridDirections
     {
-        public static Vector3 GetDirection(Vector3 _dir, Grid _grid)
+        //Grid
+        [SerializeField] private Grid Grid;
+        
+        public Vector3 GetDirection(Vector3 _dir)
         {
             if (_dir == Vector3.left)
-                return Left(_grid);
+                return Left();
             if (_dir == Vector3.right)
-                return Right(_grid);
+                return Right();
             if (_dir == Vector3.up)
-                return Forward(_grid);
+                return Forward();
             if (_dir == Vector3.down)
-                return Back(_grid);
+                return Back();
             if (_dir == Vector3.zero)
                 return Vector3.zero;
             throw new ArgumentOutOfRangeException();
         }
         
-        private static Vector3 TileIncrements(Grid _grid)
+        private Vector3 TileIncrements()
         {
-            Vector3 _cellSize = _grid.cellSize;
+            Vector3 _cellSize = Grid.cellSize;
             return new Vector3(_cellSize.x / 2, _cellSize.y / 2, 0f);
         }
 
-        private static Vector3 Left(Grid _grid) => 
-            new Vector3(-TileIncrements(_grid).x, TileIncrements(_grid).y, TileIncrements(_grid).z);
+        private Vector3 Left() => 
+            new Vector3(-TileIncrements().x, TileIncrements().y, TileIncrements().z);
 
-        private static Vector3 Right(Grid _grid) => 
-            new Vector3(TileIncrements(_grid).x, -TileIncrements(_grid).y, TileIncrements(_grid).z);
+        private Vector3 Right() => 
+            new Vector3(TileIncrements().x, -TileIncrements().y, TileIncrements().z);
 
-        private static Vector3 Forward(Grid _grid) => TileIncrements(_grid);
+        private Vector3 Forward() => TileIncrements();
 
-        private static Vector3 Back(Grid _grid) => -TileIncrements(_grid);
+        private Vector3 Back() => -TileIncrements();
     }
 }

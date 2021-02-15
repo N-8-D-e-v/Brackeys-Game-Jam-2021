@@ -7,14 +7,11 @@ namespace com.N8Dev.Brackeys.GridMovement
     [Serializable]
     public class Jumping
     {
-        //Assignables
-        public Transform Transform { set; private get; }
-        
         //Jumping
-        [SerializeField] private float JumpPower;
-        [SerializeField] private float JumpDuration;
+        [SerializeField] private float Power;
+        [SerializeField] protected float Duration;
 
-        public void Jump(Vector3 _targetPos) => 
-            Transform.DOJump(_targetPos, JumpPower, 1, JumpDuration);
+        public void Jump(Transform _transform, Vector3 _targetPos) => 
+            _transform.DOJump(_targetPos, Power, 1, Duration);
     }
 }
