@@ -1,0 +1,13 @@
+﻿# Default ignored files
+/shelf/
+/workspace.xml
+# Rider ignored files
+/contentModel.xml
+/modules.xml
+/.idea.BrackeysGameJam2021.iml
+/projectSettingsUpdater.xml
+# Datasource local storage ignored files
+/../../../../../../../../../../../:\Users\NateDawg\Documents\Unity Projects\GitHub\Brackeys-Game-Jam-2021\BrackeysGameJam2021\.idea\.idea.BrackeysGameJam2021\.idea/dataSources/
+/dataSources.local.xml
+# Editor-based HTTP Client requests
+/httpRequests/
