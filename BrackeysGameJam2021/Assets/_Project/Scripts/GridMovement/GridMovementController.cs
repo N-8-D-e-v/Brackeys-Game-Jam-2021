@@ -1,6 +1,7 @@
 using com.N8Dev.Brackeys.Input;
 using com.N8Dev.Brackeys.InputSystem;
 using com.N8Dev.Brackeys.Utilities;
+using DG.Tweening;
 using UnityEngine;
 
 namespace com.N8Dev.Brackeys.GridMovement
@@ -14,35 +15,37 @@ namespace com.N8Dev.Brackeys.GridMovement
         private PlayerInputs playerInputs;
         
         //Movement
-        [SerializeField] private GridMovement GridMovement = new GridMovement();
+        [SerializeField] private GridPositioning GridPositioning;
+        [SerializeField] private CooldownTimer CooldownTimer;
+        [SerializeField] private Jumping Jumping;
         private Vector3 targetPosition;
-        private Vector3 velocity;
-        
-        //Cooldown
-        [SerializeField] private float Cooldown = 0.1f;
-        private bool canMove = true;
 
         private void Awake()
         {
-            transform = GetComponent<Transform>();
             playerInputs = new PlayerInputs(new Inputs_Player());
+            
+            transform = GetComponent<Transform>();
+            Jumping.Transform = transform;
             targetPosition = transform.position;
         }
 
         private void Update()
         {
-            targetPosition = GetNextPosition();
-            transform.position = Vector3.SmoothDamp
-                (transform.position, targetPosition, ref velocity, Cooldown);
+            Vector3 _targetPos = GetNextPosition();
+            if (targetPosition != _targetPos)
+                Jumping.Jump(_targetPos);
+            targetPosition = _targetPos;
         }
 
         private Vector3 GetNextPosition()
         {
-            if (!canMove || !playerInputs.IsPressingKey()) 
+            if (!CanMove()) 
                 return targetPosition;
-            canMove = false;
-            this.Invoke(() => canMove = true, Cooldown);
-            return GridMovement.Move(targetPosition, playerInputs.GetInputDirection());
+            CooldownTimer.StartCooldown();
+            return GridPositioning.GetNextPosition
+                (targetPosition, playerInputs.GetInputDirection());
         }
+
+        private bool CanMove() => CooldownTimer.IsCooledDown && playerInputs.IsPressingKey();
     }
 }

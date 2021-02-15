@@ -5,7 +5,7 @@ using UnityEngine.Tilemaps;
 namespace com.N8Dev.Brackeys.GridMovement
 {
     [Serializable]
-    public class GridMovement
+    public class GridPositioning
     {
         //Assignables
         [SerializeField] private Grid Grid;
@@ -14,7 +14,7 @@ namespace com.N8Dev.Brackeys.GridMovement
         //Movement
         [Range(0, 5)] [SerializeField] private int Speed = 1;
 
-        public Vector3 Move(Vector3 _currentPos, Vector2 _input)
+        public Vector3 GetNextPosition(Vector3 _currentPos, Vector2 _input)
         {
             Vector3 _direction = GridDirections.GetDirection(_input, Grid);
             Vector3 _targetPos = _currentPos + _direction * Speed;

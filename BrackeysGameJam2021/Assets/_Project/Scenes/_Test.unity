@@ -255,7 +255,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1064249352
 Transform:
@@ -588,7 +588,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!156049354 &1462470301
 Grid:
@@ -712,7 +712,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9035484e5379d1144bd58af9372c6537, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GridMovement:
+  GridPositioning:
     Grid: {fileID: 1462470301}
     Tilemap: {fileID: 1064249354}
     Speed: 1
+  CooldownTimer:
+    CooldownTime: 0.1
+  Jumping:
+    JumpPower: 0.2
+    JumpDuration: 0.4
