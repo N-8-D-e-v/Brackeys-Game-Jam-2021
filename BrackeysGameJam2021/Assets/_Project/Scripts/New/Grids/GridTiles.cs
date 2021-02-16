@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.Tilemaps;
 
-namespace com.N8Dev.Brackeys.GridMovement
+namespace com.N8Dev.Brackeys.Grids
 {
     public class GridTiles
     {

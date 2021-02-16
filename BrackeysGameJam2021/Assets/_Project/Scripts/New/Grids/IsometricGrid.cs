@@ -1,7 +1,8 @@
-﻿using UnityEngine;
+﻿using com.N8Dev.Brackeys.GridMovement;
+using UnityEngine;
 using UnityEngine.Tilemaps;
 
-namespace com.N8Dev.Brackeys.GridMovement
+namespace com.N8Dev.Brackeys.Grids
 {
     [DisallowMultipleComponent]
     [RequireComponent(typeof(Grid))]
@@ -10,7 +11,7 @@ namespace com.N8Dev.Brackeys.GridMovement
         //Assignables
         private static GridPositions gridPositions;
         private static GridTiles gridTiles;
-        private static GridHazards gridHazards;
+        private static GridObstacles gridObstacles;
         
         //Offset
         [SerializeField] private Vector3 GridOffset = new Vector3(0f, 0.03f);
@@ -20,7 +21,7 @@ namespace com.N8Dev.Brackeys.GridMovement
         {
             gridPositions = new GridPositions(GetComponent<Grid>());
             gridTiles = new GridTiles(GetComponentInChildren<Tilemap>());
-            gridHazards = new GridHazards(gridPositions.GetGridCellSize());
+            gridObstacles = new GridObstacles(GetComponentInChildren<Tilemap>(), gridPositions.GetGridCellSize());
             gridOffset = GridOffset;
         }
 
@@ -46,8 +47,8 @@ namespace com.N8Dev.Brackeys.GridMovement
         public static bool HasTile(Vector3 _pos) => 
             gridTiles.HasTile(gridPositions.GetGridPosFromWorldPos(_pos));
 
-        public static bool HasHazard(Vector3 _pos) => 
-            gridHazards.HasHazard(_pos);
+        public static bool HasHazard(Vector3 _pos, Sprite[] _obstacles) => 
+            gridObstacles.HasHazard(_pos, gridPositions.GetGridPosFromWorldPos(_pos), _obstacles);
 
         private static Vector3 Left() => 
             new Vector3(-gridPositions.GetGridCellSize().x, gridPositions.GetGridCellSize().y, 0f) / 2;

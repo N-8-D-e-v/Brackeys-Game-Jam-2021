@@ -888,6 +888,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 1
+  Obstacles:
+  - {fileID: -4877774437544462884, guid: f347fb39890d7334395b1d4ba040e8e9, type: 3}
   Jumping:
     Transform: {fileID: 7461358005557307916}
     Freezing: {fileID: 7461358005557307921}

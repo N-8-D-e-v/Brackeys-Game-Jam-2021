@@ -1,4 +1,5 @@
 ﻿using com.N8Dev.Brackeys.GridMovement;
+using com.N8Dev.Brackeys.Grids;
 using UnityEngine;
 
 namespace com.N8Dev.Brackeys.Movement
@@ -11,6 +12,9 @@ namespace com.N8Dev.Brackeys.Movement
         //Stats
         [Range(1, 3)] [SerializeField] private int Speed = 1;
         private Vector3 targetPosition;
+        
+        //Hazards
+        [SerializeField] private Sprite[] Obstacles;
 
         protected virtual void Awake()
         {
@@ -29,7 +33,7 @@ namespace com.N8Dev.Brackeys.Movement
             Vector3 _nextPosition = IsometricGrid.GetPosOnGrid
                 (targetPosition + IsometricGrid.VectorToDirection(_direction) * Speed);
             
-            if (IsometricGrid.HasTile(_nextPosition) && !IsometricGrid.HasHazard(_nextPosition))
+            if (IsometricGrid.HasTile(_nextPosition) && !IsometricGrid.HasHazard(_nextPosition, Obstacles))
             {
                 if (targetPosition == _nextPosition) 
                     return;

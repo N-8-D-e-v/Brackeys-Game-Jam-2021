@@ -15,7 +15,7 @@ namespace com.N8Dev.Brackeys.Movement
         public void ApplyMovement(Vector3 _targetPos)
         {
             Vector3 _position = Transform.position;
-            Vector3 _edge = _position + (_targetPos - _position) / 2;
+            Vector3 _edge = _position + (_targetPos - _position) / 4;
             Vector3[] _path = {_edge, _position};
             Transform.DOPath(_path, Duration);
             Freezing.Freeze(Duration * 0.75f);
