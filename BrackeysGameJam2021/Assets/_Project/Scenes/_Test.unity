@@ -201,7 +201,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 369979114}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.197, y: 0.526, z: 0}
+  m_LocalPosition: {x: -0.6, y: 0.82, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -242,12 +242,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 369979114}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76bc5bce3e074bf9864cb89a405276d7, type: 3}
+  m_Script: {fileID: 11500000, guid: 4cae6a5e6df64749bad8fda38bdf49ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  KnockDirections:
-  - Direction: 2
-  - Direction: 3
+  KnockbackDirections:
+  - {x: 0, y: 1, z: 0}
+  - {x: 0, y: -1, z: 0}
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -543,6 +543,16 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
+  - first: {x: -1, y: 2, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 0
+      m_TileSpriteIndex: 0
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 1
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
   - first: {x: 1, y: 2, z: 0}
     second:
       serializedVersion: 2
@@ -554,6 +564,26 @@ Tilemap:
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
   - first: {x: 4, y: 2, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 0
+      m_TileSpriteIndex: 0
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 1
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
+  - first: {x: -1, y: 3, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 0
+      m_TileSpriteIndex: 0
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 1
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
+  - first: {x: 0, y: 3, z: 0}
     second:
       serializedVersion: 2
       m_TileIndex: 0
@@ -675,17 +705,17 @@ Tilemap:
       m_AllTileFlags: 1073741825
   m_AnimatedTiles: {}
   m_TileAssetArray:
-  - m_RefCount: 22
+  - m_RefCount: 25
     m_Data: {fileID: 11400000, guid: ca16fc9b78b774c4ea8aef766ac7e91a, type: 2}
   - m_RefCount: 0
     m_Data: {fileID: 0}
   m_TileSpriteArray:
-  - m_RefCount: 22
+  - m_RefCount: 25
     m_Data: {fileID: 21300000, guid: bbc03ef9f9265104f91f5a4a8b3abdeb, type: 3}
   - m_RefCount: 0
     m_Data: {fileID: 0}
   m_TileMatrixArray:
-  - m_RefCount: 22
+  - m_RefCount: 25
     m_Data:
       e00: 1
       e01: 0
@@ -706,7 +736,7 @@ Tilemap:
   m_TileColorArray:
   - m_RefCount: 0
     m_Data: {r: 4.7891e-41, g: 4.7891e-41, b: 4.7891e-41, a: 4.7891e-41}
-  - m_RefCount: 22
+  - m_RefCount: 25
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
@@ -788,10 +818,9 @@ GameObject:
   - component: {fileID: 2003209189}
   - component: {fileID: 2003209194}
   - component: {fileID: 2003209193}
-  - component: {fileID: 2003209191}
-  - component: {fileID: 2003209196}
   - component: {fileID: 2003209195}
-  - component: {fileID: 2003209192}
+  - component: {fileID: 2003209191}
+  - component: {fileID: 2003209197}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -858,7 +887,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2003209188}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.8, y: 0.2, z: 0}
+  m_LocalPosition: {x: -1.2, y: 0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -881,22 +910,12 @@ MonoBehaviour:
   Jumping:
     Power: 0.2
     Duration: 0.3
---- !u!114 &2003209192
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2003209188}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 96a3aed42feb4725a54d284a614fd101, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Knockback:
-    Power: 0.3
-    Duration: 0.5
-  FreezeTime: 0.5
+  GridPositioning:
+    GridDirections:
+      Grid: {fileID: 1462470301}
+    TilemapCheck:
+      Tilemap: {fileID: 1064249354}
+    Speed: 1
 --- !u!50 &2003209193
 Rigidbody2D:
   serializedVersion: 4
@@ -912,7 +931,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -956,7 +975,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d673518936149e4808661f844b8e503, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &2003209196
+--- !u!114 &2003209197
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -965,11 +984,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 2003209188}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b26b010e29045afa9579e08b3c79c92, type: 3}
+  m_Script: {fileID: 11500000, guid: 5a086ed287d1c5d4db458bba6f20ed1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GridDirections:
-    Grid: {fileID: 1462470301}
-  TilemapCheck:
-    Tilemap: {fileID: 1064249354}
-  Speed: 1
+  Knockback:
+    Power: 0.3
+    Duration: 0.5
+    FreezeDuration: 0.5
+  GridPositioning:
+    GridDirections:
+      Grid: {fileID: 1462470301}
+    TilemapCheck:
+      Tilemap: {fileID: 1064249354}
+    Speed: 1

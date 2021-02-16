@@ -3,7 +3,8 @@ using UnityEngine;
 
 namespace com.N8Dev.Brackeys.GridMovement
 {
-    public class GridPositioning : MonoBehaviour
+    [Serializable]
+    public class GridPositioning
     {
         //Assignables
         [SerializeField] private GridDirections GridDirections;

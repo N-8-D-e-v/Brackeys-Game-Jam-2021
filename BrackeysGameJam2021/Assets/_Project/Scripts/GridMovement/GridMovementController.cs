@@ -4,13 +4,12 @@ using UnityEngine;
 
 namespace com.N8Dev.Brackeys.GridMovement
 {
-    [RequireComponent(typeof(Freezing), typeof(GridPositioning))]
-    public class GridMovementController : MonoBehaviour
+    [RequireComponent(typeof(Freezing))]
+    public class GridMovementController : MonoBehaviour, IMovement
     {
         //Assignables
         private new Transform transform;
         private Freezing freezing;
-        private GridPositioning gridPositioning;
         
         //Inputs
         private PlayerInputs playerInputs;
@@ -18,6 +17,7 @@ namespace com.N8Dev.Brackeys.GridMovement
         //Movement
         [SerializeField] private CooldownTimer CooldownTimer;
         [SerializeField] private Jumping Jumping;
+        [SerializeField] private GridPositioning GridPositioning;
         private Vector3 targetPosition;
 
         private void Awake()
@@ -25,7 +25,7 @@ namespace com.N8Dev.Brackeys.GridMovement
             playerInputs = new PlayerInputs(new Inputs_Player());
             transform = GetComponent<Transform>();
             freezing = GetComponent<Freezing>();
-            gridPositioning = GetComponent<GridPositioning>();
+            freezing.OnUnFrozen += () => targetPosition = transform.position;
             targetPosition = transform.position;
         }
 
@@ -49,9 +49,11 @@ namespace com.N8Dev.Brackeys.GridMovement
             if (CooldownTimer.IsCooledDown && playerInputs.IsPressingKey())
             {
                 CooldownTimer.StartCooldown();
-                return gridPositioning.GetNextPosition(targetPosition, playerInputs.GetInputDirection());
+                return GridPositioning.GetNextPosition(targetPosition, playerInputs.GetInputDirection());
             }
             return targetPosition;
         }
+
+        public Vector3 GetTargetPosition() => targetPosition;
     }
 }

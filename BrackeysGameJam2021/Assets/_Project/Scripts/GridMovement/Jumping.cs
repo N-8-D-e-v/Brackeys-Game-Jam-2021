@@ -8,8 +8,8 @@ namespace com.N8Dev.Brackeys.GridMovement
     public class Jumping
     {
         //Jumping
-        [SerializeField] private float Power;
-        [SerializeField] protected float Duration;
+        [Range(0.1f, 1f)] [SerializeField] private float Power;
+        [Range(0.1f, 1f)] [SerializeField] private float Duration;
 
         public void Jump(Transform _transform, Vector3 _targetPos) => 
             _transform.DOJump(_targetPos, Power, 1, Duration);
