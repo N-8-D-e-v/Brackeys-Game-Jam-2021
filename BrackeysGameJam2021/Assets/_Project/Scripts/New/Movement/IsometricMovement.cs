@@ -1,5 +1,4 @@
 ﻿using com.N8Dev.Brackeys.GridMovement;
-using com.N8Dev.Brackeys.Utilities;
 using UnityEngine;
 
 namespace com.N8Dev.Brackeys.Movement
@@ -7,7 +6,6 @@ namespace com.N8Dev.Brackeys.Movement
     public abstract class IsometricMovement : MonoBehaviour, IMoveable
     {
         //Assignables
-        [SerializeField] private CooldownTimer CooldownTimer;
         private new Transform transform;
 
         //Stats
@@ -28,9 +26,6 @@ namespace com.N8Dev.Brackeys.Movement
 
         protected void Move(Vector3 _direction)
         {
-            if (!CooldownTimer.IsCooledDown)
-                return;
-            
             Vector3 _nextPosition = IsometricGrid.GetPosOnGrid
                 (targetPosition + IsometricGrid.VectorToDirection(_direction) * Speed);
             
@@ -40,11 +35,10 @@ namespace com.N8Dev.Brackeys.Movement
                     return;
                 GetSuccessfulMovementView().ApplyMovement(_nextPosition);
                 targetPosition = _nextPosition;
-                CooldownTimer.StartCooldown();
             }
             else
             {
-                //GetUnsuccessfulMovementView().ApplyMovement(_nextPosition);
+                GetUnsuccessfulMovementView().ApplyMovement(_nextPosition);
             }
         }
 

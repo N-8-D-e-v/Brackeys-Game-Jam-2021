@@ -7,9 +7,12 @@ namespace com.N8Dev.Brackeys.Movement
     {
         //Frozen
         private bool isFrozen;
-        
-        public void Freeze(float _seconds) => 
-            this.Invoke(() => isFrozen = true, _seconds);
+
+        public void Freeze(float _seconds)
+        {
+            isFrozen = true;
+            this.Invoke(() => isFrozen = false, _seconds);
+        }
 
         public bool IsFrozen() => isFrozen;
     }

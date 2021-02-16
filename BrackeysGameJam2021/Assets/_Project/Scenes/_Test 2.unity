@@ -887,13 +887,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea45791eeeb54610a0ec36b448f365c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CooldownTimer:
-    CooldownTime: 0.2
   Speed: 1
   Jumping:
     Transform: {fileID: 7461358005557307916}
+    Freezing: {fileID: 7461358005557307921}
     Power: 0.3
-    Duration: 0.3
+    Duration: 0.2
+  Barrier:
+    Transform: {fileID: 7461358005557307916}
+    Freezing: {fileID: 7461358005557307921}
+    Duration: 0.2
 --- !u!114 &7461358005557307921
 MonoBehaviour:
   m_ObjectHideFlags: 0

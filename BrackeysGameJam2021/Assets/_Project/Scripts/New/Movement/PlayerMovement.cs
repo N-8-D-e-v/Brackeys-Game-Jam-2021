@@ -11,8 +11,9 @@ namespace com.N8Dev.Brackeys.Movement
         private IFreezable freezable;
         private PlayerInputs inputs;
         
-        //Stats
+        //Views
         [SerializeField] private Jumping Jumping;
+        [SerializeField] private Barrier Barrier;
 
         protected override void Awake()
         {
@@ -34,6 +35,6 @@ namespace com.N8Dev.Brackeys.Movement
 
         protected override IMovementView GetSuccessfulMovementView() => Jumping;
 
-        protected override IMovementView GetUnsuccessfulMovementView() => null; //TODO make this 
+        protected override IMovementView GetUnsuccessfulMovementView() => Barrier; 
     }
 }

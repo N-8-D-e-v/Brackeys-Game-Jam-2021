@@ -5,17 +5,19 @@ using UnityEngine;
 namespace com.N8Dev.Brackeys.Movement
 {
     [Serializable]
-    public class Jumping : IMovementView
+    public class Barrier : IMovementView
     {
-        //Jumping
+        //Barrier
         [SerializeField] private Transform Transform;
         [SerializeField] private PlayerFreezing Freezing;
-        [Range(0.1f, 1f)] [SerializeField] private float Power = 0.3f;
-        [Range(0.1f, 1f)] [SerializeField] private float Duration = 0.3f;
-
+        [Range(0.1f, 1f)] [SerializeField] private float Duration = 0.1f;
+        
         public void ApplyMovement(Vector3 _targetPos)
         {
-            Transform.DOJump(_targetPos, Power, 1, Duration);
+            Vector3 _position = Transform.position;
+            Vector3 _edge = _position + (_targetPos - _position) / 2;
+            Vector3[] _path = {_edge, _position};
+            Transform.DOPath(_path, Duration);
             Freezing.Freeze(Duration * 0.75f);
         }
     }
