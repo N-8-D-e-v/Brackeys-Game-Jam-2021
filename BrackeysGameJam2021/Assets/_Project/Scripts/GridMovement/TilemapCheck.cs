@@ -8,8 +8,16 @@ namespace com.N8Dev.Brackeys.GridMovement
     public class TilemapCheck
     {
         //Assignables
-        [SerializeField] private Tilemap Tilemap;
+        private Tilemap tilemap;
+        
+        //Tilemap Type
+        [SerializeField] private TilemapTypes TilemapType;
 
-        public bool HasTile(Vector3 _pos) => Tilemap.HasTile(Tilemap.WorldToCell(_pos));
+        public bool HasTile(Vector3 _pos)
+        {
+            if (!tilemap)
+                tilemap = TilemapReference.GetTilemap(TilemapType);
+            return tilemap.HasTile(tilemap.WorldToCell(_pos));
+        }
     }
 }

@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 3769659337458ec42a815d299a675588
+guid: 41f94666cf1c312458172657c994a2d0
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6825404258303724610
-    second: sprite_IsometricCube
+      213: -7938066567553957935
+    second: sprite_IsometricCube_green
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -166,12 +166,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: sprite_IsometricCube
+      name: sprite_IsometricCube_green
       rect:
         serializedVersion: 2
         x: 168
         y: 96
-        width: 652
+        width: 655
         height: 756
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -180,8 +180,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 24cc1a8a205b8be50800000000000000
-      internalID: 6825404258303724610
+      spriteID: 1dfba85b38256d190800000000000000
+      internalID: -7938066567553957935
       vertices: []
       indices: 
       edges: []
@@ -189,7 +189,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 94800699a00b91d45b597253e24ff397
     internalID: 0
     vertices: []
     indices: 

@@ -7,7 +7,7 @@ namespace com.N8Dev.Brackeys.GridMovement
     public class GridDirections
     {
         //Grid
-        [SerializeField] private Grid Grid;
+        [SerializeField] private Vector3 GridCellSize;
         
         public Vector3 GetDirection(Vector3 _dir)
         {
@@ -26,8 +26,7 @@ namespace com.N8Dev.Brackeys.GridMovement
         
         private Vector3 TileIncrements()
         {
-            Vector3 _cellSize = Grid.cellSize;
-            return new Vector3(_cellSize.x / 2, _cellSize.y / 2, 0f);
+            return new Vector3(GridCellSize.x / 2, GridCellSize.y / 2, 0f);
         }
 
         private Vector3 Left() => 
