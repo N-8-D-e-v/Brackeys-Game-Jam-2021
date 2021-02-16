@@ -1,8 +1,7 @@
 ﻿using System;
-using com.N8Dev.Brackeys.Utilities;
 using UnityEngine;
 
-namespace com.N8Dev.Brackeys.GridMovement
+namespace com.N8Dev.Brackeys.Utilities
 {
     [Serializable]
     public class CooldownTimer
@@ -11,7 +10,7 @@ namespace com.N8Dev.Brackeys.GridMovement
         public bool IsCooledDown { private set; get; } = true;
 
         //Time
-        [SerializeField] private float CooldownTime;
+        [Range(0.1f, 100f)] [SerializeField] private float CooldownTime = 0.3f;
 
         public void StartCooldown()
         {

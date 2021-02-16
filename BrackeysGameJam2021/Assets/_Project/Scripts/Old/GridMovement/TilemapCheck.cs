@@ -1,9 +1,10 @@
 ﻿using System;
-using System.Linq;
+using com.N8Dev.Brackeys.GridMovement;
+using com.N8Dev.Brackeys.Old.GridMovement;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
-namespace com.N8Dev.Brackeys.GridMovement
+namespace com.N8Dev.Brackeys.Old.GridMovement
 {
     [Serializable]
     public class TilemapCheck

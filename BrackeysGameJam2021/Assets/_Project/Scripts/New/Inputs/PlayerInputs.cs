@@ -2,7 +2,7 @@
 using com.N8Dev.Brackeys.InputSystem;
 using UnityEngine;
 
-namespace com.N8Dev.Brackeys.Input
+namespace com.N8Dev.Brackeys.Inputs
 {
     [Serializable]
     public class PlayerInputs
@@ -15,6 +15,10 @@ namespace com.N8Dev.Brackeys.Input
             inputs = _inputs;
             inputs.Enable();
         }
+
+        public void Enable() => inputs.Enable();
+
+        public void Disable() => inputs.Disable();
 
         public Vector2 GetInputDirection()
         {

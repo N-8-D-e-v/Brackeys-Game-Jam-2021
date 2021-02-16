@@ -1,0 +1,16 @@
+﻿using com.N8Dev.Brackeys.Utilities;
+using UnityEngine;
+
+namespace com.N8Dev.Brackeys.Movement
+{
+    public class PlayerFreezing : MonoBehaviour, IFreezable
+    {
+        //Frozen
+        private bool isFrozen;
+        
+        public void Freeze(float _seconds) => 
+            this.Invoke(() => isFrozen = true, _seconds);
+
+        public bool IsFrozen() => isFrozen;
+    }
+}
