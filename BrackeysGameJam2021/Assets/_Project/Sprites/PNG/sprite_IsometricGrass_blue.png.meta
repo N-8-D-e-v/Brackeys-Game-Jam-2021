@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: b2a3c73fa10928541a60508df59250e1
+guid: c03120e01cc17324bb993b533170a4e2
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4790991363153848466
-    second: sprite_IsometricSpike
+      213: -5261011116430946631
+    second: sprite_IsometricGrass_blue
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -49,7 +49,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 1800
+  spritePixelsToUnits: 1760
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -166,13 +166,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: sprite_IsometricSpike
+      name: sprite_IsometricGrass_blue
       rect:
         serializedVersion: 2
-        x: 126
-        y: 263
-        width: 646
-        height: 699
+        x: 62
+        y: 107
+        width: 1616
+        height: 1237
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -180,8 +180,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e67104d2dbaf28db0800000000000000
-      internalID: -4790991363153848466
+      spriteID: 9be80cd73422df6b0800000000000000
+      internalID: -5261011116430946631
       vertices: []
       indices: 
       edges: []
@@ -189,7 +189,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 658687c1c5bff314c8b7f256c7d8be5e
+    spriteID: e4ad31d156cd8aa4f9ce68e98f2c2148
     internalID: 0
     vertices: []
     indices: 

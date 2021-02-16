@@ -17,7 +17,7 @@ namespace com.N8Dev.Brackeys.Splitting
         //Splitting
         [SerializeField] private Splitting Splitting;
         [SerializeField] private Combining Combining;
-        
+
         private void Awake()
         {
             freezing = GetComponent<Freezing>();
@@ -31,9 +31,10 @@ namespace com.N8Dev.Brackeys.Splitting
                 SpriteRenderer _smallerSize = CharacterSizes.GetSmallerSize();
                 if (!_smallerSize)
                 {
-                    //TODO player death
+                    
                     return;
                 }
+
                 Splitting.Split(_slicer.GetKnockbackDirections(), _smallerSize, movement.GetTargetPosition());
             }
             else if (_collider.TryGetComponent<SizeController>(out SizeController _sizeController) && !freezing.IsFrozen())
@@ -41,8 +42,7 @@ namespace com.N8Dev.Brackeys.Splitting
                 SpriteRenderer _biggerSize = CharacterSizes.GetBiggerSize();
                 if (!_biggerSize)
                     throw new InvalidOperationException();
-                Combining.Combine
-                    (_sizeController.transform.position, _biggerSize, movement.GetTargetPosition());
+                Combining.Combine(_sizeController.transform.position, _biggerSize, movement.GetTargetPosition());
             }
         }
 

@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.Tilemaps;
 
 namespace com.N8Dev.Brackeys.GridMovement
@@ -8,21 +6,15 @@ namespace com.N8Dev.Brackeys.GridMovement
     [RequireComponent(typeof(Tilemap))]
     public class TilemapReference : MonoBehaviour
     {
-        //Assignables
-        private static Tilemap groundTilemap;
+        //Tilemaps
+        private static readonly Tilemap[] TILEMAPS = new Tilemap[1];
         
-        //TilemapType
+        //Tilemap Type
         [SerializeField] private TilemapTypes TilemapType;
+
+        private void Awake() => TILEMAPS[(int) TilemapType] = GetComponent<Tilemap>();
         
-        //Dictionary
-        private static readonly Dictionary<TilemapTypes, Tilemap> TILEMAPS = new Dictionary<TilemapTypes, Tilemap>()
-        {
-            { TilemapTypes.Ground, groundTilemap }
-        };
-
-        private void Awake() => TILEMAPS[TilemapType] = GetComponent<Tilemap>();
-
-        public static Tilemap GetTilemap(TilemapTypes _tilemapType) => TILEMAPS[_tilemapType];
+        public static Tilemap GetTilemap(TilemapTypes _tilemapTypes) => TILEMAPS[(int) _tilemapTypes];
     }
 
     public enum TilemapTypes

@@ -23,11 +23,10 @@ namespace com.N8Dev.Brackeys.Splitting
         {
             foreach (Vector3 _direction in _knockbackDirections)
             {
-                SizeController _sizeController = Object.Instantiate
-                        (_smallerSize, _targetPos, Quaternion.identity)
-                    .GetComponent<SizeController>();
+                SizeController _sizeController = Object.Instantiate(_smallerSize, _targetPos, Quaternion.identity).GetComponent<SizeController>();
                 _sizeController.Knock(_direction);
             }
+
             Object.Destroy(Transform.gameObject);
         }
 

@@ -1,5 +1,6 @@
 using com.N8Dev.Brackeys.Input;
 using com.N8Dev.Brackeys.InputSystem;
+using com.N8Dev.Brackeys.Utilities;
 using UnityEngine;
 
 namespace com.N8Dev.Brackeys.GridMovement
@@ -55,5 +56,7 @@ namespace com.N8Dev.Brackeys.GridMovement
         }
 
         public Vector3 GetTargetPosition() => targetPosition;
+
+        public Vector3 GetDirection() => playerInputs.GetInputDirection();
     }
 }

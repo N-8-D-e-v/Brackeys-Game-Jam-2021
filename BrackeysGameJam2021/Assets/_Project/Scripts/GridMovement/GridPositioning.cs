@@ -9,6 +9,7 @@ namespace com.N8Dev.Brackeys.GridMovement
         //Assignables
         [SerializeField] private GridDirections GridDirections;
         [SerializeField] private TilemapCheck TilemapCheck;
+        [SerializeField] private HazardCheck HazardCheck;
 
         //Movement
         [Range(0, 5)] [SerializeField] private int Speed = 1;
@@ -16,7 +17,8 @@ namespace com.N8Dev.Brackeys.GridMovement
         public Vector3 GetNextPosition(Vector3 _currentPos, Vector2 _input)
         {
             Vector3 _targetPos = _currentPos + GridDirections.GetDirection(_input) * Speed;
-            return TilemapCheck.HasTile(_targetPos) ? _targetPos : _currentPos;
+            return TilemapCheck.HasTile(_targetPos) && !HazardCheck.HasHazard(_targetPos) ? 
+                _targetPos : _currentPos;
         }
     }
 }
