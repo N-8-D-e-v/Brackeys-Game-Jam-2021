@@ -15,6 +15,9 @@ namespace com.N8Dev.Brackeys.Sizing
         
         //Cooldown
         [SerializeField] private CooldownTimer CooldownTimer;
+        
+        //Camera Shake
+        [SerializeField] private Shake CameraShake;
 
         private void Awake()
         {
@@ -33,7 +36,10 @@ namespace com.N8Dev.Brackeys.Sizing
             if (_otherSizeable.GetSize() != sizeable.GetSize())
                 return;
             if (sizeable.GetID() > _otherSizeable.GetID())
+            {
                 Instantiate(sizeable.GetBiggerSize(), moveable.GetTargetPosition(), Quaternion.identity);
+                Camera.main.ShakeCamera(CameraShake);
+            }
             Destroy(gameObject);
         }
     }

@@ -14,6 +14,9 @@ namespace com.N8Dev.Brackeys.Sizing
 
         //Cooldown
         [SerializeField] private CooldownTimer CooldownTimer;
+        
+        //Camera Shake
+        [SerializeField] private Shake CameraShake;
 
         private void Awake()
         {
@@ -35,6 +38,7 @@ namespace com.N8Dev.Brackeys.Sizing
 
         private void Slice(ISlicer _slicer)
         {
+            Camera.main.ShakeCamera(CameraShake);
             Transform _lowerSize = sizeable.GetLowerSize();
             for (int _i = 0; _i < _slicer.GetSliceKnockback().Length; _i++)
             {

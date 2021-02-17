@@ -150,13 +150,21 @@ MonoBehaviour:
   Speed: 1
   Obstacles:
   - {fileID: -4877774437544462884, guid: f347fb39890d7334395b1d4ba040e8e9, type: 3}
+  ForceMoveCooldown:
+    CooldownTime: 0.3
   Jumping:
     Transform: {fileID: 2436864720106747373}
-    Power: 0.3
+    Power: 0.2
     Duration: 0.2
+    CameraShake:
+      Duration: 0.1
+      Strength: 0.01
   Barrier:
     Transform: {fileID: 2436864720106747373}
     Duration: 0.2
+    CameraShake:
+      Duration: 0.1
+      Strength: 0.1
   CooldownTimer:
     CooldownTime: 0.15
 --- !u!114 &8603240046599871411
@@ -189,6 +197,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CooldownTimer:
     CooldownTime: 0.8
+  CameraShake:
+    Duration: 0.1
+    Strength: 0.3
 --- !u!114 &1494209058893421093
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -202,4 +213,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CooldownTimer:
-    CooldownTime: 0.3
+    CooldownTime: 0.25
+  CameraShake:
+    Duration: 0.1
+    Strength: 0.2
