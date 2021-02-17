@@ -72,9 +72,17 @@ PrefabInstance:
       value: Player_Medium
       objectReference: {fileID: 0}
     - target: {fileID: 2436864720106747377, guid: 4f74d75cecd33994eac6e81f5d492992, type: 3}
+      propertyPath: Obstacles.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2436864720106747377, guid: 4f74d75cecd33994eac6e81f5d492992, type: 3}
       propertyPath: Obstacles.Array.data[0]
       value: 
       objectReference: {fileID: -5261011116430946631, guid: c03120e01cc17324bb993b533170a4e2, type: 3}
+    - target: {fileID: 2436864720106747377, guid: 4f74d75cecd33994eac6e81f5d492992, type: 3}
+      propertyPath: Obstacles.Array.data[1]
+      value: 
+      objectReference: {fileID: -4790991363153848466, guid: b2a3c73fa10928541a60508df59250e1, type: 3}
     - target: {fileID: 2436864720106747381, guid: 4f74d75cecd33994eac6e81f5d492992, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
       value: 0.3638889

@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using UnityEngine.InputSystem.Interactions;
 using UnityEngine.Tilemaps;
 
 namespace com.N8Dev.Brackeys.Grids
@@ -11,8 +10,6 @@ namespace com.N8Dev.Brackeys.Grids
         
         //Obstacle Check
         private readonly float checkRadius;
-        private readonly Collider2D[] foundObstacles = new Collider2D[10];
-        private readonly Collider2D[] foundSlicers = new Collider2D[10];
 
         public GridObstacles(Tilemap _tilemap, Vector3 _gridCellSize)
         {
@@ -22,19 +19,20 @@ namespace com.N8Dev.Brackeys.Grids
 
         public bool HasObstacle(Vector3 _pos, Vector3Int _gridPos, Sprite[] _obstacles)
         {
-            Physics2D.OverlapCircleNonAlloc(_pos, checkRadius, foundObstacles);
-            if (foundObstacles.Length == 0)
+            Sprite _tile = tilemap.GetSprite(_gridPos);
+            for (int _i = 0; _i < _obstacles.Length; _i++)
+                if (_tile == _obstacles[_i])
+                    return true;
+            
+            Collider2D[] _foundObstacles = Physics2D.OverlapCircleAll(_pos, checkRadius);
+            if (_foundObstacles.Length == 0)
                 return false;
 
-            for (int _x = 0; _x < foundObstacles.Length; _x++)
+            for (int _x = 0; _x < _foundObstacles.Length; _x++)
             {
-                if (!foundObstacles[_x])
-                    break;
                 for (int _y = 0; _y < _obstacles.Length; _y++)
                 {
-                    if (tilemap.GetSprite(_gridPos) == _obstacles[_y])
-                        return true;
-                    if (!foundObstacles[_x].TryGetComponent<SpriteRenderer>(out SpriteRenderer _spriteRenderer))
+                    if (!_foundObstacles[_x].TryGetComponent<SpriteRenderer>(out SpriteRenderer _spriteRenderer))
                         continue;
                     if (_spriteRenderer.sprite == _obstacles[_y])
                         return true;

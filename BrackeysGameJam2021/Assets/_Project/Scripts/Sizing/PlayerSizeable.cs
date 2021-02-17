@@ -2,12 +2,14 @@
 
 namespace com.N8Dev.Brackeys.Sizing
 {
-    public class PlayerSizing : MonoBehaviour
+    public class PlayerSizeable : MonoBehaviour, ISizeable
     {
         //Player Sizes
         [SerializeField] private Transform[] PlayerSizes;
         [SerializeField] private Sizes CurrentSize;
 
+        public int GetID() => GetInstanceID();
+        
         public Sizes GetSize() => CurrentSize;
 
         public Transform GetLowerSize() => PlayerSizes[Mathf.Min((int) CurrentSize + 1, PlayerSizes.Length)];

@@ -27,7 +27,7 @@ namespace com.N8Dev.Brackeys.Grids
         private void Update() => gridOffset = GridOffset;
         
         public static float GetObstacleCheckRadius() => 
-            Mathf.Min(gridPositions.GetGridCellSize().x, gridPositions.GetGridCellSize().y);
+            Mathf.Min(gridPositions.GetGridCellSize().x, gridPositions.GetGridCellSize().y) / 3;
 
         public static Vector3 VectorToDirection(Vector3 _dirVector)
         {

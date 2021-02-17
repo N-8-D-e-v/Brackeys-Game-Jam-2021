@@ -1,8 +1,7 @@
 ﻿using System;
-using com.N8Dev.Brackeys.Utilities;
 using UnityEngine;
 
-namespace com.N8Dev.Brackeys.Movement
+namespace com.N8Dev.Brackeys.Utilities
 {
     [Serializable]
     public class CooldownTimer

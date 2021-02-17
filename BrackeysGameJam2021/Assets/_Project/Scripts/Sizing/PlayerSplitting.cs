@@ -1,15 +1,16 @@
-﻿using com.N8Dev.Brackeys.Movement;
+﻿using com.N8Dev.Brackeys.Utilities;
+using com.N8Dev.Brackeys.Movement;
 using UnityEngine;
 
 namespace com.N8Dev.Brackeys.Sizing
 {
     [RequireComponent(typeof(IMoveable))]
-    [RequireComponent(typeof(PlayerSizing))]
+    [RequireComponent(typeof(ISizeable))]
     public class PlayerSplitting : MonoBehaviour
     {
         //Assignables
         private IMoveable moveable;
-        private PlayerSizing playerSizing;
+        private ISizeable sizeable;
 
         //Cooldown
         [SerializeField] private CooldownTimer CooldownTimer;
@@ -17,7 +18,7 @@ namespace com.N8Dev.Brackeys.Sizing
         private void Awake()
         {
             moveable = GetComponent<IMoveable>();
-            playerSizing = GetComponent<PlayerSizing>();
+            sizeable = GetComponent<PlayerSizeable>();
         }
 
         private void OnTriggerEnter2D(Collider2D _collider)
@@ -26,7 +27,7 @@ namespace com.N8Dev.Brackeys.Sizing
                 return;
             if (!_collider.TryGetComponent<ISlicer>(out ISlicer _slicer)) 
                 return;
-            if (_slicer.GetSize() != playerSizing.GetSize())
+            if (_slicer.GetSize() != sizeable.GetSize())
                 return;
             Slice(_slicer);
             CooldownTimer.StartCooldown();
@@ -34,14 +35,15 @@ namespace com.N8Dev.Brackeys.Sizing
 
         private void Slice(ISlicer _slicer)
         {
-            Transform _lowerSize = playerSizing.GetLowerSize();
+            Transform _lowerSize = sizeable.GetLowerSize();
             for (int _i = 0; _i < _slicer.GetSliceKnockback().Length; _i++)
             {
                 PlayerSplitting _player = Instantiate
                     (_lowerSize, moveable.GetTargetPosition(), Quaternion.identity)
                     .GetComponent<PlayerSplitting>();
                 _player.CooldownTimer.StartCooldown();
-                _player.GetComponent<IMoveable>().Move(_slicer.GetSliceKnockback()[_i]);
+                IMoveable _playerMoveable = _player.GetComponent<IMoveable>();
+                _playerMoveable.ForceMove(_slicer.GetSliceKnockback()[_i]);
             }
 
             Destroy(gameObject);

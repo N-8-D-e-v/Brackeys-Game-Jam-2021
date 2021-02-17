@@ -1,4 +1,5 @@
-﻿using com.N8Dev.Brackeys.Inputs;
+﻿using com.N8Dev.Brackeys.Utilities;
+using com.N8Dev.Brackeys.Inputs;
 using com.N8Dev.Brackeys.InputSystem;
 using UnityEngine;
 
