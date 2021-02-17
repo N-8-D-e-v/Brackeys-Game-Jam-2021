@@ -4,6 +4,7 @@ using UnityEngine;
 
 namespace com.N8Dev.Brackeys.Movement
 {
+    [DisallowMultipleComponent]
     public abstract class IsometricMovement : MonoBehaviour, IMoveable
     {
         //Assignables
@@ -28,12 +29,12 @@ namespace com.N8Dev.Brackeys.Movement
 
         protected abstract IMovementView GetUnsuccessfulMovementView();
 
-        protected void Move(Vector3 _direction)
+        public void Move(Vector3 _direction)
         {
             Vector3 _nextPosition = IsometricGrid.GetPosOnGrid
                 (targetPosition + IsometricGrid.VectorToDirection(_direction) * Speed);
             
-            if (IsometricGrid.HasTile(_nextPosition) && !IsometricGrid.HasHazard(_nextPosition, Obstacles))
+            if (IsometricGrid.HasTile(_nextPosition) && !IsometricGrid.HasObstacle(_nextPosition, Obstacles))
             {
                 if (targetPosition == _nextPosition) 
                     return;

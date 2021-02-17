@@ -1,4 +1,5 @@
 ﻿using com.N8Dev.Brackeys.GridMovement;
+using com.N8Dev.Brackeys.Splitting;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
@@ -26,6 +27,9 @@ namespace com.N8Dev.Brackeys.Grids
         }
 
         private void Update() => gridOffset = GridOffset;
+        
+        public static float GetObstacleCheckRadius() => 
+            Mathf.Min(gridPositions.GetGridCellSize().x, gridPositions.GetGridCellSize().y);
 
         public static Vector3 VectorToDirection(Vector3 _dirVector)
         {
@@ -47,8 +51,8 @@ namespace com.N8Dev.Brackeys.Grids
         public static bool HasTile(Vector3 _pos) => 
             gridTiles.HasTile(gridPositions.GetGridPosFromWorldPos(_pos));
 
-        public static bool HasHazard(Vector3 _pos, Sprite[] _obstacles) => 
-            gridObstacles.HasHazard(_pos, gridPositions.GetGridPosFromWorldPos(_pos), _obstacles);
+        public static bool HasObstacle(Vector3 _pos, Sprite[] _obstacles) => 
+            gridObstacles.HasObstacle(_pos, gridPositions.GetGridPosFromWorldPos(_pos), _obstacles);
 
         private static Vector3 Left() => 
             new Vector3(-gridPositions.GetGridCellSize().x, gridPositions.GetGridCellSize().y, 0f) / 2;

@@ -3,6 +3,7 @@ using UnityEngine;
 
 namespace com.N8Dev.Brackeys.Movement
 {
+    [DisallowMultipleComponent]
     public class PlayerFreezing : MonoBehaviour, IFreezable
     {
         //Frozen
