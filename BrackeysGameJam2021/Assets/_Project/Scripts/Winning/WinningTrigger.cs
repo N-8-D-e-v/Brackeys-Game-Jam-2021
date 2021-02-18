@@ -1,14 +1,14 @@
 ﻿using UnityEngine;
 
-namespace com.N8Dev.Brackeys.GameState
+namespace com.N8Dev.Brackeys.Winning
 {
     [RequireComponent(typeof(BoxCollider2D))]
     public class WinningTrigger : MonoBehaviour
     {
         //Winning
-        [SerializeField] private Winning Winning;
+        [SerializeField] private Win Win;
 
         private void OnTriggerEnter2D(Collider2D _collider) => 
-            Winning.CheckWin(_collider.gameObject);
+            Win.CheckWin(_collider.gameObject);
     }
 }
