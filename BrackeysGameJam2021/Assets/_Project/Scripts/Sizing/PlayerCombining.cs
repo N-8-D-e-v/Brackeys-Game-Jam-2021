@@ -1,4 +1,4 @@
-﻿using System;
+﻿using com.N8Dev.Brackeys.CameraControls;
 using com.N8Dev.Brackeys.Movement;
 using com.N8Dev.Brackeys.Utilities;
 using UnityEngine;

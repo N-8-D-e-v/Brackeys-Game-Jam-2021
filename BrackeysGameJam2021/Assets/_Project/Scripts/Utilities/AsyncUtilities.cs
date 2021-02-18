@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 
 namespace com.N8Dev.Brackeys.Utilities
 {
-    public static class AsyncUtil
+    public static class AsyncUtilities
     {
         public static async void Invoke(this object _caller, Action _action, float _seconds)
         {

@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 8603240046599871411}
   - component: {fileID: 1352662795987215440}
   - component: {fileID: 1494209058893421093}
+  - component: {fileID: 2009898317906102947}
   m_Layer: 0
   m_Name: Player_Large
   m_TagString: Untagged
@@ -31,7 +32,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2436864720106747375}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.2, y: 0.5, z: 0}
+  m_LocalPosition: {x: -1.329, y: 0.563, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -112,7 +113,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.36222222, y: 0.42}
+  m_Size: {x: 0.42, y: 0.42}
   m_EdgeRadius: 0
 --- !u!50 &2436864720106747378
 Rigidbody2D:
@@ -164,7 +165,7 @@ MonoBehaviour:
     Duration: 0.2
     CameraShake:
       Duration: 0.1
-      Strength: 0.1
+      Strength: 0.03
   CooldownTimer:
     CooldownTime: 0.15
 --- !u!114 &8603240046599871411
@@ -199,7 +200,7 @@ MonoBehaviour:
     CooldownTime: 0.8
   CameraShake:
     Duration: 0.1
-    Strength: 0.3
+    Strength: 0.05
 --- !u!114 &1494209058893421093
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -216,4 +217,16 @@ MonoBehaviour:
     CooldownTime: 0.25
   CameraShake:
     Duration: 0.1
-    Strength: 0.2
+    Strength: 0.05
+--- !u!114 &2009898317906102947
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2436864720106747375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9017b7ba6ae345adb0693748a30281a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
