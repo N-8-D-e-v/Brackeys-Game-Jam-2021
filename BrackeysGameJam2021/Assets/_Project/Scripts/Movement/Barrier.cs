@@ -1,5 +1,5 @@
 ﻿using System;
-using com.N8Dev.Brackeys.CameraControls;
+using com.N8Dev.Brackeys.Effects;
 using DG.Tweening;
 using UnityEngine;
 

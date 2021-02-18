@@ -1,4 +1,4 @@
-﻿using com.N8Dev.Brackeys.CameraControls;
+﻿using com.N8Dev.Brackeys.Effects;
 using com.N8Dev.Brackeys.Movement;
 using com.N8Dev.Brackeys.Utilities;
 using UnityEngine;
@@ -9,19 +9,18 @@ namespace com.N8Dev.Brackeys.Sizing
     public class PlayerCombining : MonoBehaviour
     {
         //Assignables
-        private new Transform transform;
         private ISizeable sizeable;
         private IMoveable moveable;
-        
+
         //Cooldown
         [SerializeField] private CooldownTimer CooldownTimer;
         
-        //Camera Shake
+        //Effects
         [SerializeField] private Shake CameraShake;
+        [SerializeField] private EffectParticles BiggerSizeParticles;
 
         private void Awake()
         {
-            transform = GetComponent<Transform>();
             sizeable = GetComponent<ISizeable>();
             moveable = GetComponent<IMoveable>();
             CooldownTimer.StartCooldown();
@@ -39,6 +38,7 @@ namespace com.N8Dev.Brackeys.Sizing
             {
                 Instantiate(sizeable.GetBiggerSize(), moveable.GetTargetPosition(), Quaternion.identity);
                 Camera.main.ShakeCamera(CameraShake);
+                BiggerSizeParticles.Play(moveable.GetTargetPosition());
             }
             Destroy(gameObject);
         }

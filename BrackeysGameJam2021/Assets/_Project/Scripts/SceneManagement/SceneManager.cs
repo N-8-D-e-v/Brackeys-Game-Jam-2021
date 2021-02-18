@@ -41,6 +41,8 @@ namespace com.N8Dev.Brackeys.SceneManagement
             transition.OnSceneTransitionEnd += OnSceneLoadEnd;
             transition.OnSceneTransitionEnd += () => isTransitioning = false;
         }
+        
+        private void Start() => OnSceneLoadEnd?.Invoke();
 
         public static void LoadCurrentScene()
         {

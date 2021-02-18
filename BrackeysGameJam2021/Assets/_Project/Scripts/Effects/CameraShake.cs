@@ -3,7 +3,7 @@ using com.N8Dev.Brackeys.Utilities;
 using DG.Tweening;
 using UnityEngine;
 
-namespace com.N8Dev.Brackeys.CameraControls
+namespace com.N8Dev.Brackeys.Effects
 {
     public static class CameraShake
     {
