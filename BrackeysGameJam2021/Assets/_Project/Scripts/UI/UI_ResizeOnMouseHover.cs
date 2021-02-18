@@ -11,7 +11,7 @@ namespace com.N8Dev.Brackeys.UI
         
         //Animation
         [Range(0f, 3f)] [SerializeField] private float LargerScale = 1.25f;
-        [Range(0f, 1f)] [SerializeField] private float AnimationTime = 0.1f;
+        [Range(0f, 1f)] [SerializeField] private float AnimationTime = 0.01f;
 
         private void Awake() => 
             transform = GetComponent<Transform>();
