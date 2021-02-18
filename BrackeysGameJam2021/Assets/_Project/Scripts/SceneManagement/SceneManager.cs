@@ -1,5 +1,6 @@
 ﻿using System;
 using com.N8Dev.Brackeys.SceneManagement.Transitions;
+using com.N8Dev.Brackeys.Utilities;
 using UnityEngine;
 
 namespace com.N8Dev.Brackeys.SceneManagement
@@ -9,11 +10,7 @@ namespace com.N8Dev.Brackeys.SceneManagement
     {
         //Singleton
         private static SceneManager instance;
-        
-        //Events
-        public static event Action OnSceneLoadStart; 
-        public static event Action OnSceneLoadEnd; 
-        
+
         //Transition
         [SerializeField] private FadeTransition SceneTransition;
         private static SceneTransition transition;
@@ -36,14 +33,15 @@ namespace com.N8Dev.Brackeys.SceneManagement
             }
             
             transition = SceneTransition;
-            transition.OnSceneTransitionStart += OnSceneLoadStart;
+            transition.OnSceneTransitionStart += EventManager.SceneLoadStart;
             transition.OnSceneTransitionStart += () => isTransitioning = true;
             transition.OnSceneTransitionMiddle += LoadScene;
-            transition.OnSceneTransitionEnd += OnSceneLoadEnd;
+            transition.OnSceneTransitionEnd += EventManager.SceneLoadEnd;
             transition.OnSceneTransitionEnd += () => isTransitioning = false;
         }
-        
-        private void Start() => OnSceneLoadEnd?.Invoke();
+
+        private void Start() =>
+            EventManager.SceneLoadEnd();
 
         public static void LoadCurrentScene()
         {

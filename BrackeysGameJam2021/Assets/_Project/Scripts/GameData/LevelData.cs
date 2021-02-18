@@ -1,6 +1,7 @@
 ﻿using com.N8Dev.Brackeys.Movement;
 using com.N8Dev.Brackeys.SceneManagement;
 using com.N8Dev.Brackeys.Sizing;
+using com.N8Dev.Brackeys.Utilities;
 using UnityEngine;
 
 namespace com.N8Dev.Brackeys.GameData
@@ -8,8 +9,13 @@ namespace com.N8Dev.Brackeys.GameData
     [DisallowMultipleComponent]
     public class LevelData : MonoBehaviour
     {
+        //Singleton
+        private static LevelData instance;
+        
         //Moves
-        [SerializeField] private int PlayerMovesAllowed;
+        [Range(0f, 3f)] [SerializeField] private float TimeBeforeRestarting = 0.5f;
+        [Range(1, 100)] [SerializeField] private int PlayerMovesAllowed;
+        private static float timeBeforeRestarting;
         private static float playerMovesRemaining;
         
         //Players
@@ -17,6 +23,17 @@ namespace com.N8Dev.Brackeys.GameData
 
         private void Awake()
         {
+            if (!instance)
+            {
+                instance = this;
+            }
+            else
+            {
+                Destroy(gameObject);
+                return;
+            }
+
+            timeBeforeRestarting = TimeBeforeRestarting;
             playerMovesRemaining = PlayerMovesAllowed;
             numberOfPlayers = 1;
 
@@ -32,13 +49,15 @@ namespace com.N8Dev.Brackeys.GameData
             PlayerCombining.OnPlayerCombine -= PlayerCombine;
         }
 
-        public static int GetMovesRemaining() => (int) playerMovesRemaining;
+        public static int GetMovesRemaining() => 
+            Mathf.Max(0, (int) playerMovesRemaining);
 
-        private static void PlayerMove()
+        private static async void PlayerMove()
         {
             playerMovesRemaining -= 1 / (float) numberOfPlayers;
-            if (playerMovesRemaining == 0)
-                SceneManager.LoadCurrentScene();
+            if (playerMovesRemaining != 0) 
+                return;
+            EventManager.PlayerMovesRunOut(timeBeforeRestarting);
         }
         
         private static void PlayerSplit() =>

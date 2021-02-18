@@ -1,4 +1,5 @@
-﻿using com.N8Dev.Brackeys.SceneManagement;
+﻿
+using com.N8Dev.Brackeys.Utilities;
 using UnityEngine;
 
 namespace com.N8Dev.Brackeys.GameData
@@ -8,14 +9,16 @@ namespace com.N8Dev.Brackeys.GameData
     {
         private void Awake()
         {
-            SceneManager.OnSceneLoadStart += GameStateManager.PauseGame;
-            SceneManager.OnSceneLoadEnd += GameStateManager.StartGame;
+            EventManager.OnSceneLoadStart += GameStateManager.PauseGame;
+            EventManager.OnSceneLoadEnd += GameStateManager.StartGame;
+            EventManager.OnPlayerMovesRunOut += GameStateManager.PauseGame;
         }
 
         private void OnDisable()
         {
-            SceneManager.OnSceneLoadStart -= GameStateManager.PauseGame;
-            SceneManager.OnSceneLoadEnd -= GameStateManager.StartGame;
+            EventManager.OnSceneLoadStart -= GameStateManager.PauseGame;
+            EventManager.OnSceneLoadEnd -= GameStateManager.StartGame;
+            EventManager.OnPlayerMovesRunOut += GameStateManager.PauseGame;
         }
     }
 }
