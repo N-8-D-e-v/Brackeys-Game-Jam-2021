@@ -7,9 +7,11 @@
 
         public static GameStates GetGameState() => gameState;
 
-        public static void StartGame() => gameState = GameStates.Play;
+        public static void StartGame() => 
+            gameState = GameStates.Play;
 
-        public static void PauseGame() => gameState = GameStates.Pause;
+        public static void PauseGame() => 
+            gameState = GameStates.Pause;
     }
 
     public enum GameStates
