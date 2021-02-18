@@ -2,10 +2,10 @@
 using com.N8Dev.Brackeys.SceneManagement;
 using UnityEngine;
 
-namespace com.N8Dev.Brackeys.GameState
+namespace com.N8Dev.Brackeys.Winning
 {
     [Serializable]
-    public class Winning
+    public class Win
     {
         //Win Conditions
         [SerializeField] private string PlayerTag = "Player";
