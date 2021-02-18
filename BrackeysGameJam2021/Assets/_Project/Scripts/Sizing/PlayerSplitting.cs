@@ -1,4 +1,6 @@
-﻿using com.N8Dev.Brackeys.Effects;
+﻿using System;
+using com.N8Dev.Brackeys.Effects;
+using com.N8Dev.Brackeys.GameData;
 using com.N8Dev.Brackeys.Utilities;
 using com.N8Dev.Brackeys.Movement;
 using UnityEngine;
@@ -9,6 +11,9 @@ namespace com.N8Dev.Brackeys.Sizing
     [RequireComponent(typeof(ISizeable))]
     public class PlayerSplitting : MonoBehaviour
     {
+        //Event
+        public static event Action OnPlayerSplit; 
+        
         //Assignables
         private IMoveable moveable;
         private ISizeable sizeable;
@@ -40,15 +45,18 @@ namespace com.N8Dev.Brackeys.Sizing
 
         private void Slice(ISlicer _slicer)
         {
+            OnPlayerSplit?.Invoke();
+            
             Camera.main.ShakeCamera(CameraShake);
             SmallerSizeParticles.Play(moveable.GetTargetPosition());
-            
+
             Transform _lowerSize = sizeable.GetLowerSize();
             for (int _i = 0; _i < _slicer.GetSliceKnockback().Length; _i++)
             {
                 PlayerSplitting _player = Instantiate
                     (_lowerSize, moveable.GetTargetPosition(), Quaternion.identity)
                     .GetComponent<PlayerSplitting>();
+                
                 _player.CooldownTimer.StartCooldown();
                 IMoveable _playerMoveable = _player.GetComponent<IMoveable>();
                 _playerMoveable.ForceMove(_slicer.GetSliceKnockback()[_i]);

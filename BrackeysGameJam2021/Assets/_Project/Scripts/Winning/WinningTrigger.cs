@@ -2,6 +2,7 @@
 
 namespace com.N8Dev.Brackeys.Winning
 {
+    [DisallowMultipleComponent]
     [RequireComponent(typeof(BoxCollider2D))]
     public class WinningTrigger : MonoBehaviour
     {

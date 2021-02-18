@@ -1,13 +1,17 @@
-﻿using com.N8Dev.Brackeys.Utilities;
+﻿using System;
+using com.N8Dev.Brackeys.GameData;
+using com.N8Dev.Brackeys.Utilities;
 using com.N8Dev.Brackeys.Inputs;
 using com.N8Dev.Brackeys.InputSystem;
-using com.N8Dev.Brackeys.GameState;
 using UnityEngine;
 
 namespace com.N8Dev.Brackeys.Movement
 {
     public class PlayerMovement : IsometricMovement
     {
+        //Event
+        public static event Action OnPlayerMove;
+        
         //Movement
         private PlayerInputs inputs;
 
@@ -26,9 +30,9 @@ namespace com.N8Dev.Brackeys.Movement
             inputs = new PlayerInputs(new Inputs_Player());
         }
 
-        private void OnEnable() => inputs.Enable();
+        private void OnEnable() => inputs?.Enable();
 
-        private void OnDisable() => inputs.Disable();
+        private void OnDisable() => inputs?.Disable();
 
         private void Update()
         {
@@ -36,8 +40,11 @@ namespace com.N8Dev.Brackeys.Movement
                 return;
             if (GameStateManager.GetGameState() != GameStates.Play)
                 return;
-            if (inputs.IsPressingKey())
-                CooldownTimer.StartCooldown();
+            if (!inputs.IsPressingKey())
+                return;
+            
+            OnPlayerMove?.Invoke();
+            CooldownTimer.StartCooldown();
             Move(inputs.GetInputDirection());
         }
 

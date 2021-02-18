@@ -1,10 +1,10 @@
 ﻿using com.N8Dev.Brackeys.SceneManagement;
 using UnityEngine;
 
-namespace com.N8Dev.Brackeys.GameState
+namespace com.N8Dev.Brackeys.GameData
 {
     [DisallowMultipleComponent]
-    public class PlayerGameState : MonoBehaviour
+    public class GameState_Player : MonoBehaviour
     {
         private void Awake()
         {

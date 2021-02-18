@@ -1,4 +1,4 @@
-﻿namespace com.N8Dev.Brackeys.GameState
+﻿namespace com.N8Dev.Brackeys.GameData
 {
     public static class GameStateManager
     {

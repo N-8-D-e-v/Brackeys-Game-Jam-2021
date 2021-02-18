@@ -4,6 +4,7 @@ using UnityEngine;
 
 namespace com.N8Dev.Brackeys.SceneManagement
 {
+    [DisallowMultipleComponent]
     public class SceneManager : MonoBehaviour
     {
         //Singleton
@@ -28,7 +29,7 @@ namespace com.N8Dev.Brackeys.SceneManagement
                 instance = this;
                 DontDestroyOnLoad(gameObject);
             }
-            else if (instance != this)
+            else
             {
                 Destroy(gameObject);
                 return;

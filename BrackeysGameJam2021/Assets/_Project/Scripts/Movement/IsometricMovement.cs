@@ -26,20 +26,13 @@ namespace com.N8Dev.Brackeys.Movement
             targetPosition = transform.position;
         }
 
-        protected abstract IMovementView GetSuccessfulMovementView();
-
-        protected abstract IMovementView GetUnsuccessfulMovementView();
-
         public void Move(Vector3 _direction)
         {
             if (!ForceMoveCooldown.IsCooledDown())
                 return;
-            Vector3 _nextPosition = IsometricGrid.GetPosOnGrid
-                (targetPosition + IsometricGrid.VectorToDirection(_direction) * Speed);
-
-            bool _hasTile = IsometricGrid.HasTile(_nextPosition);
-            bool _hasObstacle = IsometricGrid.HasObstacle(_nextPosition, Obstacles);
-            if (_hasTile && !_hasObstacle)
+            Vector3 _nextPosition = GetNextPosition(_direction);
+            
+            if (CanMove(_nextPosition))
             {
                 if (targetPosition == _nextPosition) 
                     return;
@@ -62,5 +55,16 @@ namespace com.N8Dev.Brackeys.Movement
         }
 
         public Vector3 GetTargetPosition() => targetPosition;
+
+        private Vector3 GetNextPosition(Vector3 _direction) => 
+            IsometricGrid.GetPosOnGrid(targetPosition + IsometricGrid.VectorToDirection(_direction) * Speed);
+
+        private bool CanMove(Vector3 _nextPosition) => 
+            IsometricGrid.HasTile(_nextPosition) && 
+            !IsometricGrid.HasObstacle(_nextPosition, Obstacles);
+        
+        protected abstract IMovementView GetSuccessfulMovementView();
+
+        protected abstract IMovementView GetUnsuccessfulMovementView();
     }
 }
