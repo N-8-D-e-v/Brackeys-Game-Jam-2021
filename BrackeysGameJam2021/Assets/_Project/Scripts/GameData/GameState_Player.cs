@@ -5,9 +5,9 @@ using UnityEngine;
 namespace com.N8Dev.Brackeys.GameData
 {
     [DisallowMultipleComponent]
-    public class GameState_Player : MonoBehaviour
+    public class GameState_Player : Singleton<GameState_Player>
     {
-        private void Awake()
+        protected override void Init()
         {
             EventManager.OnSceneLoadStart += GameStateManager.PauseGame;
             EventManager.OnSceneLoadEnd += GameStateManager.StartGame;

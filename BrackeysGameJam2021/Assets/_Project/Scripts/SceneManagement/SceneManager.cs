@@ -1,16 +1,12 @@
-﻿using System;
-using com.N8Dev.Brackeys.SceneManagement.Transitions;
+﻿using com.N8Dev.Brackeys.SceneManagement.Transitions;
 using com.N8Dev.Brackeys.Utilities;
 using UnityEngine;
 
 namespace com.N8Dev.Brackeys.SceneManagement
 {
     [DisallowMultipleComponent]
-    public class SceneManager : MonoBehaviour
+    public class SceneManager : PersistentSingleton<SceneManager>
     {
-        //Singleton
-        private static SceneManager instance;
-
         //Transition
         [SerializeField] private FadeTransition SceneTransition;
         private static SceneTransition transition;
@@ -19,19 +15,8 @@ namespace com.N8Dev.Brackeys.SceneManagement
         //Target Scene
         private static int targetScene;
 
-        private void Awake()
+        protected override void Init()
         {
-            if (!instance)
-            {
-                instance = this;
-                DontDestroyOnLoad(gameObject);
-            }
-            else
-            {
-                Destroy(gameObject);
-                return;
-            }
-            
             transition = SceneTransition;
             transition.OnSceneTransitionStart += EventManager.SceneLoadStart;
             transition.OnSceneTransitionStart += () => isTransitioning = true;

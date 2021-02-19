@@ -1,11 +1,12 @@
-﻿using UnityEngine;
+﻿using com.N8Dev.Brackeys.Utilities;
+using UnityEngine;
 using UnityEngine.Tilemaps;
 
 namespace com.N8Dev.Brackeys.Grids
 {
     [DisallowMultipleComponent]
     [RequireComponent(typeof(Grid))]
-    public class IsometricGrid : MonoBehaviour
+    public class IsometricGrid : Singleton<IsometricGrid>
     {
         //Assignables
         private static GridPositions gridPositions;
@@ -16,7 +17,7 @@ namespace com.N8Dev.Brackeys.Grids
         [SerializeField] private Vector3 GridOffset = new Vector3(0f, 0.03f);
         private static Vector3 gridOffset;
 
-        private void Awake()
+        protected override void Init()
         {
             gridPositions = new GridPositions(GetComponent<Grid>());
             gridTiles = new GridTiles(GetComponentInChildren<Tilemap>());
@@ -24,7 +25,8 @@ namespace com.N8Dev.Brackeys.Grids
             gridOffset = GridOffset;
         }
 
-        private void Update() => gridOffset = GridOffset;
+        private void Update() => 
+            gridOffset = GridOffset;
         
         public static float GetObstacleCheckRadius() => 
             Mathf.Min(gridPositions.GetGridCellSize().x, gridPositions.GetGridCellSize().y) / 3;

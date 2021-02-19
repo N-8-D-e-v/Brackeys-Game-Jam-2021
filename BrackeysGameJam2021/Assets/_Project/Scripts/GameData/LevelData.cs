@@ -1,5 +1,4 @@
 ﻿using com.N8Dev.Brackeys.Movement;
-using com.N8Dev.Brackeys.SceneManagement;
 using com.N8Dev.Brackeys.Sizing;
 using com.N8Dev.Brackeys.Utilities;
 using UnityEngine;
@@ -7,11 +6,8 @@ using UnityEngine;
 namespace com.N8Dev.Brackeys.GameData
 {
     [DisallowMultipleComponent]
-    public class LevelData : MonoBehaviour
+    public class LevelData : Singleton<LevelData>
     {
-        //Singleton
-        private static LevelData instance;
-        
         //Moves
         [Range(0f, 3f)] [SerializeField] private float TimeBeforeRestarting = 0.5f;
         [Range(1, 100)] [SerializeField] private int PlayerMovesAllowed;
@@ -21,18 +17,8 @@ namespace com.N8Dev.Brackeys.GameData
         //Players
         private static int numberOfPlayers = 1;
 
-        private void Awake()
+        protected override void Init()
         {
-            if (!instance)
-            {
-                instance = this;
-            }
-            else
-            {
-                Destroy(gameObject);
-                return;
-            }
-
             timeBeforeRestarting = TimeBeforeRestarting;
             playerMovesRemaining = PlayerMovesAllowed;
             numberOfPlayers = 1;
