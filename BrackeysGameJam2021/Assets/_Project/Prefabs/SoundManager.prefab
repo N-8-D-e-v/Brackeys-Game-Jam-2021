@@ -45,7 +45,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Sounds:
   - Name: PlayerJump
-    AudioClip: {fileID: 0}
+    AudioClip: {fileID: 8300000, guid: 09ad92aa75bfc824a8640efa25132be7, type: 3}
   - Name: PlayerBarrier
     AudioClip: {fileID: 0}
   - Name: PlayerSplit

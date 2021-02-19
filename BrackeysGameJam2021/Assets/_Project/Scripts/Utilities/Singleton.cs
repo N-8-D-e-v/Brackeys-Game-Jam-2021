@@ -5,13 +5,13 @@ namespace com.N8Dev.Brackeys.Utilities
     public abstract class Singleton<T> : MonoBehaviour where T : MonoBehaviour
     {
         //Singleton
-        private static T instance;
+        protected static T Instance;
         
         private void Awake()
         {
-            if (!instance)
+            if (!Instance)
             {
-                instance = this as T;
+                Instance = this as T;
                 DontDestroyOnLoad(gameObject);
             }
             else

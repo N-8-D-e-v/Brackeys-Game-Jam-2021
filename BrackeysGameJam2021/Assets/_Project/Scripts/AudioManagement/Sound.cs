@@ -8,8 +8,14 @@ namespace com.N8Dev.Brackeys.AudioManagement
     {
         //Sound
         [SerializeField] private string SoundName;
+        [SerializeField] private bool UseRandomPitch = true;
 
-        public void Play() =>
-            SoundManager.PlaySound(SoundName);
+        public void Play()
+        {
+            if (UseRandomPitch)
+                SoundManager.PlaySound(SoundName);
+            else
+                SoundManager.PlaySound(SoundName, 1f, 1f);
+        }
     }
 }

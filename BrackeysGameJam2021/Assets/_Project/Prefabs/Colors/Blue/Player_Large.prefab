@@ -159,12 +159,18 @@ MonoBehaviour:
     Transform: {fileID: 2436864720106747373}
     Power: 0.2
     Duration: 0.2
+    Sound:
+      SoundName: PlayerJump
+      UseRandomPitch: 1
   Barrier:
     Transform: {fileID: 2436864720106747373}
     Duration: 0.2
     CameraShake:
       Duration: 0.1
       Strength: 0.03
+    Sound:
+      SoundName: 
+      UseRandomPitch: 1
   CooldownTimer:
     CooldownTime: 0.15
 --- !u!114 &8603240046599871411
@@ -202,6 +208,9 @@ MonoBehaviour:
     Strength: 0.05
   SmallerSizeParticles:
     Particles: {fileID: 3677695670020588007}
+  Sound:
+    SoundName: PlayerJump
+    UseRandomPitch: 1
 --- !u!114 &1494209058893421093
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -221,6 +230,9 @@ MonoBehaviour:
     Strength: 0.05
   BiggerSizeParticles:
     Particles: {fileID: 5147921932031393705}
+  Sound:
+    SoundName: 
+    UseRandomPitch: 1
 --- !u!114 &2009898317906102947
 MonoBehaviour:
   m_ObjectHideFlags: 0
