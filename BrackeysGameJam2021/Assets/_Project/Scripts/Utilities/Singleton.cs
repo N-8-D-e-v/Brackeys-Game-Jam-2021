@@ -12,6 +12,7 @@ namespace com.N8Dev.Brackeys.Utilities
             if (!instance)
             {
                 instance = this as T;
+                DontDestroyOnLoad(gameObject);
             }
             else
             {

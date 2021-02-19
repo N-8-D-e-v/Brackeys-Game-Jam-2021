@@ -6,7 +6,7 @@ using UnityEngine;
 namespace com.N8Dev.Brackeys.GameData
 {
     [DisallowMultipleComponent]
-    public class LevelData : Singleton<LevelData>
+    public class LevelData : MonoBehaviour
     {
         //Moves
         [Range(0f, 3f)] [SerializeField] private float TimeBeforeRestarting = 0.5f;
@@ -17,7 +17,7 @@ namespace com.N8Dev.Brackeys.GameData
         //Players
         private static int numberOfPlayers = 1;
 
-        protected override void Init()
+        private void Awake()
         {
             timeBeforeRestarting = TimeBeforeRestarting;
             playerMovesRemaining = PlayerMovesAllowed;

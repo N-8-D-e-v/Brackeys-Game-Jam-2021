@@ -5,7 +5,7 @@ using UnityEngine;
 namespace com.N8Dev.Brackeys.SceneManagement
 {
     [DisallowMultipleComponent]
-    public class SceneManager : PersistentSingleton<SceneManager>
+    public class SceneManager : Singleton<SceneManager>
     {
         //Transition
         [SerializeField] private FadeTransition SceneTransition;

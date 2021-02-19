@@ -1,13 +1,12 @@
-﻿
-using com.N8Dev.Brackeys.Utilities;
+﻿using com.N8Dev.Brackeys.Utilities;
 using UnityEngine;
 
 namespace com.N8Dev.Brackeys.GameData
 {
     [DisallowMultipleComponent]
-    public class GameState_Player : Singleton<GameState_Player>
+    public class GameState_Player : MonoBehaviour
     {
-        protected override void Init()
+        private void Awake()
         {
             EventManager.OnSceneLoadStart += GameStateManager.PauseGame;
             EventManager.OnSceneLoadEnd += GameStateManager.StartGame;
