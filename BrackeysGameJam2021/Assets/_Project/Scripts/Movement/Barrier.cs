@@ -1,4 +1,5 @@
 ﻿using System;
+using com.N8Dev.Brackeys.AudioManagement;
 using com.N8Dev.Brackeys.Effects;
 using DG.Tweening;
 using UnityEngine;
@@ -17,6 +18,10 @@ namespace com.N8Dev.Brackeys.Movement
         [Header("Camera Shake")]
         [SerializeField] private Shake CameraShake;
         
+        //Sound
+        [Header("Sound")]
+        [SerializeField] private Sound Sound;
+        
         public void ApplyMovement(Vector3 _targetPos)
         {
             Vector3 _position = Transform.position;
@@ -24,6 +29,7 @@ namespace com.N8Dev.Brackeys.Movement
             Vector3[] _path = {_edge, _position};
             Transform.DOPath(_path, Duration);
             Camera.main.ShakeCamera(CameraShake);
+            Sound.Play();
         }
     }
 }

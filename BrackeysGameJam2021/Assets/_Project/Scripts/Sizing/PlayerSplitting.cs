@@ -1,6 +1,6 @@
 ﻿using System;
+using com.N8Dev.Brackeys.AudioManagement;
 using com.N8Dev.Brackeys.Effects;
-using com.N8Dev.Brackeys.GameData;
 using com.N8Dev.Brackeys.Utilities;
 using com.N8Dev.Brackeys.Movement;
 using UnityEngine;
@@ -24,6 +24,7 @@ namespace com.N8Dev.Brackeys.Sizing
         //Effects
         [SerializeField] private Shake CameraShake;
         [SerializeField] private EffectParticles SmallerSizeParticles;
+        [SerializeField] private Sound Sound;
 
         private void Awake()
         {
@@ -49,6 +50,7 @@ namespace com.N8Dev.Brackeys.Sizing
             
             Camera.main.ShakeCamera(CameraShake);
             SmallerSizeParticles.Play(moveable.GetTargetPosition());
+            Sound.Play();
 
             Transform _lowerSize = sizeable.GetLowerSize();
             for (int _i = 0; _i < _slicer.GetSliceKnockback().Length; _i++)

@@ -1,4 +1,5 @@
 ﻿using System;
+using com.N8Dev.Brackeys.AudioManagement;
 using com.N8Dev.Brackeys.Effects;
 using com.N8Dev.Brackeys.GameData;
 using com.N8Dev.Brackeys.Movement;
@@ -23,6 +24,7 @@ namespace com.N8Dev.Brackeys.Sizing
         //Effects
         [SerializeField] private Shake CameraShake;
         [SerializeField] private EffectParticles BiggerSizeParticles;
+        [SerializeField] private Sound Sound;
 
         private void Awake()
         {
@@ -46,6 +48,7 @@ namespace com.N8Dev.Brackeys.Sizing
                 
                 Camera.main.ShakeCamera(CameraShake);
                 BiggerSizeParticles.Play(moveable.GetTargetPosition());
+                Sound.Play();
             }
             Destroy(gameObject);
         }
