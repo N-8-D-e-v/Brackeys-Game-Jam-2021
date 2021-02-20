@@ -6,6 +6,9 @@ namespace com.N8Dev.Brackeys.Utilities
     [Serializable]
     public class CooldownTimer
     {
+        //Event
+        public event Action OnCooledDown;
+        
         //Cooldown
         [Range(0.1f, 100f)] [SerializeField] private float CooldownTime = 0.3f;
         private bool isCooledDown = true;
@@ -15,7 +18,11 @@ namespace com.N8Dev.Brackeys.Utilities
         public void StartCooldown()
         {
             isCooledDown = false;
-            this.Invoke(() => isCooledDown = true, CooldownTime);
+            this.Invoke(() =>
+            {
+                isCooledDown = true;
+                OnCooledDown?.Invoke();
+            }, CooldownTime);
         }
     }
 }

@@ -28,6 +28,7 @@ namespace com.N8Dev.Brackeys.Movement
         {
             base.Awake();
             inputs = new PlayerInputs(new Inputs_Player());
+            CooldownTimer.OnCooledDown += () => OnPlayerMove?.Invoke();
         }
 
         private void OnEnable() => inputs?.Enable();
@@ -43,7 +44,6 @@ namespace com.N8Dev.Brackeys.Movement
             if (!inputs.IsPressingKey())
                 return;
             
-            OnPlayerMove?.Invoke();
             CooldownTimer.StartCooldown();
             Move(inputs.GetInputDirection());
         }
