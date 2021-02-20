@@ -18,6 +18,7 @@ namespace com.N8Dev.Allete.Utilities
         
         //Level Events
         public static event Action OnPlayerMovesRunOut;
+        public static event Action OnPlayerWin;
 
         public static async void PlayerMovesRunOut(float _seconds)
         {
@@ -25,5 +26,8 @@ namespace com.N8Dev.Allete.Utilities
             await Task.Delay(TimeSpan.FromSeconds(_seconds));
             SceneManager.LoadCurrentScene();
         }
+
+        public static void PlayerWin() =>
+            OnPlayerWin?.Invoke();
     }
 }

@@ -19,6 +19,7 @@ namespace com.N8Dev.Allete.GameData
         
         //Players
         private static int numberOfPlayers = 1;
+        private static bool hasPlayerWon = false;
         
         //Sounds
         [SerializeField] private Sound RunOutOfMovesSound;
@@ -34,6 +35,7 @@ namespace com.N8Dev.Allete.GameData
             PlayerMovement.OnPlayerMove += PlayerMove;
             PlayerSplitting.OnPlayerSplit += PlayerSplit;
             PlayerCombining.OnPlayerCombine += PlayerCombine;
+            EventManager.OnPlayerWin += () => hasPlayerWon = true;
         }
 
         private void OnDisable()
@@ -49,7 +51,7 @@ namespace com.N8Dev.Allete.GameData
         private static void PlayerMove()
         {
             playerMovesRemaining -= 1 / (float) numberOfPlayers;
-            if (playerMovesRemaining > 0) 
+            if (playerMovesRemaining > 0 || hasPlayerWon) 
                 return;
             EventManager.PlayerMovesRunOut(timeBeforeRestarting);
             runOutOfMovesSound.Play();

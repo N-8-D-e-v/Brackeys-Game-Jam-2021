@@ -23,7 +23,7 @@ namespace com.N8Dev.Allete.Grids
             for (int _i = 0; _i < _obstacles.Length; _i++)
                 if (_tile == _obstacles[_i])
                     return true;
-            
+
             Collider2D[] _foundObstacles = Physics2D.OverlapCircleAll(_pos, checkRadius);
             if (_foundObstacles.Length == 0)
                 return false;

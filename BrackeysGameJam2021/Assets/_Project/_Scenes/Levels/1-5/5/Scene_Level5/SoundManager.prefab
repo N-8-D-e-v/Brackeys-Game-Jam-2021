@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &81532138890442402
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 81532138890442428}
+  - component: {fileID: 81532138890442429}
+  m_Layer: 0
+  m_Name: SoundManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &81532138890442428
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 81532138890442402}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &81532138890442429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 81532138890442402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d28fc4f26554c8e926bb0a8478d151e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Sounds:
+  - Name: PlayerJump
+    AudioClip: {fileID: 8300000, guid: 09ad92aa75bfc824a8640efa25132be7, type: 3}
+  - Name: PlayerBarrier
+    AudioClip: {fileID: 8300000, guid: 2347af2a1360df24e995c0b414eff14d, type: 3}
+  - Name: PlayerSplit
+    AudioClip: {fileID: 8300000, guid: 99f7bd5313d11d74cbdf89a72643f646, type: 3}
+  - Name: PlayerCombine
+    AudioClip: {fileID: 8300000, guid: 0357d9d9a7190ec41b26b2386a3b8354, type: 3}
+  - Name: PlayerRunOutOfMoves
+    AudioClip: {fileID: 8300000, guid: 98542f84c5ae86b4bbb70694f02431b7, type: 3}
+  - Name: PlayerWin
+    AudioClip: {fileID: 8300000, guid: efaa40a675b7b1e418c9f9eeb69c3e45, type: 3}
+  - Name: ButtonClick
+    AudioClip: {fileID: 8300000, guid: 37732f6aa5754844c9e9a5d79b3b6a5f, type: 3}
