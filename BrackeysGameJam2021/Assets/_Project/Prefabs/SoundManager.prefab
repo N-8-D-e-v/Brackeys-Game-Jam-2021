@@ -47,14 +47,14 @@ MonoBehaviour:
   - Name: PlayerJump
     AudioClip: {fileID: 8300000, guid: 09ad92aa75bfc824a8640efa25132be7, type: 3}
   - Name: PlayerBarrier
-    AudioClip: {fileID: 0}
+    AudioClip: {fileID: 8300000, guid: 2347af2a1360df24e995c0b414eff14d, type: 3}
   - Name: PlayerSplit
-    AudioClip: {fileID: 0}
+    AudioClip: {fileID: 8300000, guid: 99f7bd5313d11d74cbdf89a72643f646, type: 3}
   - Name: PlayerCombine
-    AudioClip: {fileID: 0}
-  - Name: PlayerRanOutOfMoves
-    AudioClip: {fileID: 0}
+    AudioClip: {fileID: 8300000, guid: 0357d9d9a7190ec41b26b2386a3b8354, type: 3}
+  - Name: PlayerRunOutOfMoves
+    AudioClip: {fileID: 8300000, guid: 98542f84c5ae86b4bbb70694f02431b7, type: 3}
   - Name: PlayerWin
-    AudioClip: {fileID: 0}
+    AudioClip: {fileID: 8300000, guid: efaa40a675b7b1e418c9f9eeb69c3e45, type: 3}
   - Name: ButtonClick
-    AudioClip: {fileID: 0}
+    AudioClip: {fileID: 8300000, guid: 37732f6aa5754844c9e9a5d79b3b6a5f, type: 3}

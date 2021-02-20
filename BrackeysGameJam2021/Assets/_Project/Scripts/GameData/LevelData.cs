@@ -1,4 +1,5 @@
-﻿using com.N8Dev.Brackeys.Movement;
+﻿using com.N8Dev.Brackeys.AudioManagement;
+using com.N8Dev.Brackeys.Movement;
 using com.N8Dev.Brackeys.Sizing;
 using com.N8Dev.Brackeys.Utilities;
 using UnityEngine;
@@ -16,12 +17,17 @@ namespace com.N8Dev.Brackeys.GameData
         
         //Players
         private static int numberOfPlayers = 1;
+        
+        //Sounds
+        [SerializeField] private Sound RunOutOfMovesSound;
+        private static Sound runOutOfMovesSound;
 
         private void Awake()
         {
             timeBeforeRestarting = TimeBeforeRestarting;
             playerMovesRemaining = PlayerMovesAllowed;
             numberOfPlayers = 1;
+            runOutOfMovesSound = RunOutOfMovesSound;
 
             PlayerMovement.OnPlayerMove += PlayerMove;
             PlayerSplitting.OnPlayerSplit += PlayerSplit;
@@ -38,12 +44,14 @@ namespace com.N8Dev.Brackeys.GameData
         public static int GetMovesRemaining() => 
             Mathf.Max(0, (int) playerMovesRemaining);
 
-        private static async void PlayerMove()
+        private static void PlayerMove()
         {
             playerMovesRemaining -= 1 / (float) numberOfPlayers;
             if (playerMovesRemaining != 0) 
                 return;
             EventManager.PlayerMovesRunOut(timeBeforeRestarting);
+            runOutOfMovesSound.Play();
+            
         }
         
         private static void PlayerSplit() =>

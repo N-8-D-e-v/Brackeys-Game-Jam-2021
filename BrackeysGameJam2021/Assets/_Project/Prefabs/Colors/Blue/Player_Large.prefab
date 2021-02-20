@@ -169,7 +169,7 @@ MonoBehaviour:
       Duration: 0.1
       Strength: 0.03
     Sound:
-      SoundName: 
+      SoundName: PlayerBarrier
       UseRandomPitch: 1
   CooldownTimer:
     CooldownTime: 0.15
@@ -209,7 +209,7 @@ MonoBehaviour:
   SmallerSizeParticles:
     Particles: {fileID: 3677695670020588007}
   Sound:
-    SoundName: PlayerJump
+    SoundName: PlayerSplit
     UseRandomPitch: 1
 --- !u!114 &1494209058893421093
 MonoBehaviour:
@@ -231,7 +231,7 @@ MonoBehaviour:
   BiggerSizeParticles:
     Particles: {fileID: 5147921932031393705}
   Sound:
-    SoundName: 
+    SoundName: PlayerCombine
     UseRandomPitch: 1
 --- !u!114 &2009898317906102947
 MonoBehaviour:

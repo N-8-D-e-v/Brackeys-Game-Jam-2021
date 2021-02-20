@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8114139843355214208}
   - component: {fileID: 8950892264586589459}
   m_Layer: 0
-  m_Name: LevelData
+  m_Name: _LevelData
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -43,4 +43,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 017aaf66936a4d2eb0e2968557b9f472, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TimeBeforeRestarting: 0.5
   PlayerMovesAllowed: 2
+  RunOutOfMovesSound:
+    SoundName: PlayerRunOutOfMoves
+    UseRandomPitch: 1

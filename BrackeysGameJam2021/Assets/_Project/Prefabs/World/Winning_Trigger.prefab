@@ -73,6 +73,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Win:
     PlayerTag: Player
+    Sound:
+      SoundName: PlayerWin
+      UseRandomPitch: 1
 --- !u!1001 &7635913977466365517
 PrefabInstance:
   m_ObjectHideFlags: 0
