@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.Tilemaps;
 
-namespace com.N8Dev.Brackeys.Grids
+namespace com.N8Dev.Allete.Grids
 {
     public class GridObstacles
     {

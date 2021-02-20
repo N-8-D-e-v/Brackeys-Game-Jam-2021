@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 
-namespace com.N8Dev.Brackeys.Utilities
+namespace com.N8Dev.Allete.Utilities
 {
     public static class AsyncUtilities
     {

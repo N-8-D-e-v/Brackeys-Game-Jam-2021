@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace com.N8Dev.Brackeys.Movement
+namespace com.N8Dev.Allete.Movement
 {
     public interface IMovementView
     {

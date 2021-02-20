@@ -1,7 +1,7 @@
 ﻿using DG.Tweening;
 using UnityEngine;
 
-namespace com.N8Dev.Brackeys.Effects
+namespace com.N8Dev.Allete.Effects
 {
     public class CameraMove : MonoBehaviour
     {

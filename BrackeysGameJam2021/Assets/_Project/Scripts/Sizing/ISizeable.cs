@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace com.N8Dev.Brackeys.Sizing
+namespace com.N8Dev.Allete.Sizing
 {
     public interface ISizeable
     {

@@ -4,7 +4,7 @@ using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace com.N8Dev.Brackeys.SceneManagement.Transitions
+namespace com.N8Dev.Allete.SceneManagement.Transitions
 {
     [Serializable]
     public class FadeTransition : SceneTransition

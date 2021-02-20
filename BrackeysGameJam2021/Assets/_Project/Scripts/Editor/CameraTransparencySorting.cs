@@ -4,7 +4,7 @@ using UnityEngine;
 
 #endif
 
-namespace com.N8Dev.Brackeys.Editor
+namespace com.N8Dev.Allete.Editor
 {
     [ExecuteInEditMode]
     public class CameraTransparencySorting : MonoBehaviour

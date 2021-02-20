@@ -1,7 +1,7 @@
 ﻿using DG.Tweening;
 using UnityEngine;
 
-namespace com.N8Dev.Brackeys.UI
+namespace com.N8Dev.Allete.UI
 {
     public abstract class UI_Shake : MonoBehaviour
     {

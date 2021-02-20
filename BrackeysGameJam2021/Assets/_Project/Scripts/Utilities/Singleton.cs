@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace com.N8Dev.Brackeys.Utilities
+namespace com.N8Dev.Allete.Utilities
 {
     public abstract class Singleton<T> : MonoBehaviour where T : MonoBehaviour
     {

@@ -1,9 +1,9 @@
 ﻿using System;
-using com.N8Dev.Brackeys.Utilities;
+using com.N8Dev.Allete.Utilities;
 using DG.Tweening;
 using UnityEngine;
 
-namespace com.N8Dev.Brackeys.Effects
+namespace com.N8Dev.Allete.Effects
 {
     public static class CameraShake
     {

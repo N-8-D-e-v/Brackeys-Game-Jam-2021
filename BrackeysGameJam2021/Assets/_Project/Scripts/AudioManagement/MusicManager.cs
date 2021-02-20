@@ -1,8 +1,8 @@
-﻿using com.N8Dev.Brackeys.Utilities;
+﻿using com.N8Dev.Allete.Utilities;
 using DG.Tweening;
 using UnityEngine;
 
-namespace com.N8Dev.Brackeys.AudioManagement
+namespace com.N8Dev.Allete.AudioManagement
 {
     public class MusicManager : Singleton<MusicManager>
     {

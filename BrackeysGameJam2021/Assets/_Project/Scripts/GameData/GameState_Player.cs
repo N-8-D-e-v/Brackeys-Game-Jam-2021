@@ -1,7 +1,7 @@
-﻿using com.N8Dev.Brackeys.Utilities;
+﻿using com.N8Dev.Allete.Utilities;
 using UnityEngine;
 
-namespace com.N8Dev.Brackeys.GameData
+namespace com.N8Dev.Allete.GameData
 {
     [DisallowMultipleComponent]
     public class GameState_Player : MonoBehaviour

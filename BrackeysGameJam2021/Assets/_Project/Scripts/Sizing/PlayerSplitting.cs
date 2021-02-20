@@ -1,11 +1,11 @@
 ﻿using System;
-using com.N8Dev.Brackeys.AudioManagement;
-using com.N8Dev.Brackeys.Effects;
-using com.N8Dev.Brackeys.Utilities;
-using com.N8Dev.Brackeys.Movement;
+using com.N8Dev.Allete.AudioManagement;
+using com.N8Dev.Allete.Effects;
+using com.N8Dev.Allete.Movement;
+using com.N8Dev.Allete.Utilities;
 using UnityEngine;
 
-namespace com.N8Dev.Brackeys.Sizing
+namespace com.N8Dev.Allete.Sizing
 {
     [RequireComponent(typeof(IMoveable))]
     [RequireComponent(typeof(ISizeable))]

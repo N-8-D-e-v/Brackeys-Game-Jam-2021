@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using com.N8Dev.Brackeys.Utilities;
+using com.N8Dev.Allete.Utilities;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-namespace com.N8Dev.Brackeys.AudioManagement
+namespace com.N8Dev.Allete.AudioManagement
 {
     public class SoundManager : Singleton<SoundManager>
     {
@@ -27,7 +27,7 @@ namespace com.N8Dev.Brackeys.AudioManagement
             audioSourcesPool = new ObjectPool<AudioSource>(gameObject, _audioSource);
             audioClipCooldown = new HashSet<string>();
             
-            Destroy(_audioSource);
+            Destroy(_audioSource.gameObject);
 
             soundsDictionary = new Dictionary<string, AudioClip>();
             for (int _i = 0; _i < Sounds.Length; _i++)

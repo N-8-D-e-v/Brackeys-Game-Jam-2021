@@ -1,7 +1,7 @@
-﻿using com.N8Dev.Brackeys.SceneManagement;
+﻿using com.N8Dev.Allete.SceneManagement;
 using UnityEngine;
 
-namespace com.N8Dev.Brackeys.UI
+namespace com.N8Dev.Allete.UI
 {
     public class UI_SceneSwitchActions : MonoBehaviour
     {

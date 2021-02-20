@@ -1,9 +1,9 @@
 ﻿using System;
-using com.N8Dev.Brackeys.AudioManagement;
+using com.N8Dev.Allete.AudioManagement;
 using DG.Tweening;
 using UnityEngine;
 
-namespace com.N8Dev.Brackeys.Movement
+namespace com.N8Dev.Allete.Movement
 {
     [Serializable]
     public class Jumping : IMovementView

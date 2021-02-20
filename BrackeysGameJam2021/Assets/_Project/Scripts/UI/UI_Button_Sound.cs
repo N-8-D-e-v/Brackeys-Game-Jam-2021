@@ -1,7 +1,7 @@
-﻿using com.N8Dev.Brackeys.AudioManagement;
+﻿using com.N8Dev.Allete.AudioManagement;
 using UnityEngine;
 
-namespace com.N8Dev.Brackeys.UI
+namespace com.N8Dev.Allete.UI
 {
     public class UI_Button_Sound : MonoBehaviour
     {

@@ -1,7 +1,7 @@
 ﻿using System;
-using com.N8Dev.Brackeys.Utilities;
+using com.N8Dev.Allete.Utilities;
 
-namespace com.N8Dev.Brackeys.SceneManagement.Transitions
+namespace com.N8Dev.Allete.SceneManagement.Transitions
 {
     [Serializable]
     public abstract class SceneTransition

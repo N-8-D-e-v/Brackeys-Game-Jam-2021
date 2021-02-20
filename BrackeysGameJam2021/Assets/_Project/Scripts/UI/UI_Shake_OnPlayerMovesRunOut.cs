@@ -1,6 +1,6 @@
-﻿using com.N8Dev.Brackeys.Utilities;
+﻿using com.N8Dev.Allete.Utilities;
 
-namespace com.N8Dev.Brackeys.UI
+namespace com.N8Dev.Allete.UI
 {
     public class UI_Shake_OnPlayerMovesRunOut : UI_Shake
     {

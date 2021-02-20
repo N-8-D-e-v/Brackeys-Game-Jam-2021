@@ -1,9 +1,9 @@
 ﻿using System;
-using com.N8Dev.Brackeys.AudioManagement;
-using com.N8Dev.Brackeys.SceneManagement;
+using com.N8Dev.Allete.AudioManagement;
+using com.N8Dev.Allete.SceneManagement;
 using UnityEngine;
 
-namespace com.N8Dev.Brackeys.Winning
+namespace com.N8Dev.Allete.Winning
 {
     [Serializable]
     public class Win

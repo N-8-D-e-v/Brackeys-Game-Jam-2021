@@ -1,8 +1,8 @@
-﻿using com.N8Dev.Brackeys.Grids;
-using com.N8Dev.Brackeys.Utilities;
+﻿using com.N8Dev.Allete.Grids;
+using com.N8Dev.Allete.Utilities;
 using UnityEngine;
 
-namespace com.N8Dev.Brackeys.Movement
+namespace com.N8Dev.Allete.Movement
 {
     [DisallowMultipleComponent]
     public abstract class IsometricMovement : MonoBehaviour, IMoveable

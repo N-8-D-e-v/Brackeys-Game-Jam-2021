@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Threading.Tasks;
-using com.N8Dev.Brackeys.SceneManagement;
+using com.N8Dev.Allete.SceneManagement;
 
-namespace com.N8Dev.Brackeys.Utilities
+namespace com.N8Dev.Allete.Utilities
 {
     public static class EventManager
     {

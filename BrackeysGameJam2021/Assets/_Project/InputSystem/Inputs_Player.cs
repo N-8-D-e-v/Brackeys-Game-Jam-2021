@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Utilities;
 
-namespace com.N8Dev.Brackeys.InputSystem
+namespace com.N8Dev.Allete.InputSystem
 {
     public class @Inputs_Player : IInputActionCollection, IDisposable
     {

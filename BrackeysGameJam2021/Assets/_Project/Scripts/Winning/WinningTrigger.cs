@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace com.N8Dev.Brackeys.Winning
+namespace com.N8Dev.Allete.Winning
 {
     [DisallowMultipleComponent]
     [RequireComponent(typeof(BoxCollider2D))]

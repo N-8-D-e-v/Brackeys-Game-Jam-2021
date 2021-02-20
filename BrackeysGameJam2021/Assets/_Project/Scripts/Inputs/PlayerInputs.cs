@@ -1,8 +1,8 @@
 ﻿using System;
-using com.N8Dev.Brackeys.InputSystem;
+using com.N8Dev.Allete.InputSystem;
 using UnityEngine;
 
-namespace com.N8Dev.Brackeys.Inputs
+namespace com.N8Dev.Allete.Inputs
 {
     [Serializable]
     public class PlayerInputs

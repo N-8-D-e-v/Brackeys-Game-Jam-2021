@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Object = UnityEngine.Object;
 
-namespace com.N8Dev.Brackeys.Utilities
+namespace com.N8Dev.Allete.Utilities
 {
     [Serializable]
     public class ObjectPool<T> where T : Component

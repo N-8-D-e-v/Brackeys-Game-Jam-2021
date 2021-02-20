@@ -1,11 +1,11 @@
 ﻿using System;
-using com.N8Dev.Brackeys.GameData;
-using com.N8Dev.Brackeys.Utilities;
-using com.N8Dev.Brackeys.Inputs;
-using com.N8Dev.Brackeys.InputSystem;
+using com.N8Dev.Allete.GameData;
+using com.N8Dev.Allete.Inputs;
+using com.N8Dev.Allete.InputSystem;
+using com.N8Dev.Allete.Utilities;
 using UnityEngine;
 
-namespace com.N8Dev.Brackeys.Movement
+namespace com.N8Dev.Allete.Movement
 {
     public class PlayerMovement : IsometricMovement
     {

@@ -1,7 +1,7 @@
 ﻿using TMPro;
 using UnityEngine;
 
-namespace com.N8Dev.Brackeys.UI
+namespace com.N8Dev.Allete.UI
 {
     [DisallowMultipleComponent]
     [RequireComponent(typeof(TextMeshProUGUI))]

@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-namespace com.N8Dev.Brackeys.UI
+namespace com.N8Dev.Allete.UI
 {
     public class UI_ResizeOnMouseHover : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     {

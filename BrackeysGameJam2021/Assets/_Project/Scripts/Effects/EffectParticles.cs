@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace com.N8Dev.Brackeys.Effects
+namespace com.N8Dev.Allete.Effects
 {
     [Serializable]
     public class EffectParticles

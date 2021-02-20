@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace com.N8Dev.Brackeys.Utilities
+namespace com.N8Dev.Allete.Utilities
 {
     [Serializable]
     public class CooldownTimer

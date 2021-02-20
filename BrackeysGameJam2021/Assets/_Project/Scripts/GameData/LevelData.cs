@@ -1,10 +1,12 @@
-﻿using com.N8Dev.Brackeys.AudioManagement;
-using com.N8Dev.Brackeys.Movement;
-using com.N8Dev.Brackeys.Sizing;
-using com.N8Dev.Brackeys.Utilities;
+﻿using System;
+using System.Threading.Tasks;
+using com.N8Dev.Allete.AudioManagement;
+using com.N8Dev.Allete.Movement;
+using com.N8Dev.Allete.Sizing;
+using com.N8Dev.Allete.Utilities;
 using UnityEngine;
 
-namespace com.N8Dev.Brackeys.GameData
+namespace com.N8Dev.Allete.GameData
 {
     [DisallowMultipleComponent]
     public class LevelData : MonoBehaviour
@@ -47,17 +49,24 @@ namespace com.N8Dev.Brackeys.GameData
         private static void PlayerMove()
         {
             playerMovesRemaining -= 1 / (float) numberOfPlayers;
-            if (playerMovesRemaining != 0) 
+            if (playerMovesRemaining > 0) 
                 return;
             EventManager.PlayerMovesRunOut(timeBeforeRestarting);
             runOutOfMovesSound.Play();
-            
         }
-        
-        private static void PlayerSplit() =>
-            numberOfPlayers += 1;
 
-        private static void PlayerCombine() => 
+        private static async void PlayerSplit()
+        {
+            //TODO don't hardcode this
+            await Task.Delay(TimeSpan.FromSeconds(0.3f));
+            numberOfPlayers += 1;
+        }
+
+        private static async void PlayerCombine()
+        {
+            //TODO also don't hardcode this
+            await Task.Delay(TimeSpan.FromSeconds(0.3f));
             numberOfPlayers -= 1;
+        }
     }
 }

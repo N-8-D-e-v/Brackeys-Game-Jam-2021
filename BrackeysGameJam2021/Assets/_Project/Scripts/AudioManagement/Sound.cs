@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace com.N8Dev.Brackeys.AudioManagement
+namespace com.N8Dev.Allete.AudioManagement
 {
     [Serializable]
     public class Sound

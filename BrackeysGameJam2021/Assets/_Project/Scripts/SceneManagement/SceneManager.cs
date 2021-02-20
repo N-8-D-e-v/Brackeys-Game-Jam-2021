@@ -1,8 +1,8 @@
-﻿using com.N8Dev.Brackeys.SceneManagement.Transitions;
-using com.N8Dev.Brackeys.Utilities;
+﻿using com.N8Dev.Allete.SceneManagement.Transitions;
+using com.N8Dev.Allete.Utilities;
 using UnityEngine;
 
-namespace com.N8Dev.Brackeys.SceneManagement
+namespace com.N8Dev.Allete.SceneManagement
 {
     [DisallowMultipleComponent]
     public class SceneManager : Singleton<SceneManager>
