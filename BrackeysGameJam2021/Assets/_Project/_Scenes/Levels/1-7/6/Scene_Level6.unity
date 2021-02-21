@@ -576,7 +576,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8950892264586589459, guid: d424477610866654e80ddbe14a3dcead, type: 3}
       propertyPath: PlayerMovesAllowed
-      value: 16
+      value: 17
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d424477610866654e80ddbe14a3dcead, type: 3}
