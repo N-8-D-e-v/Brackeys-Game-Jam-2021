@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Threading.Tasks;
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
@@ -17,11 +16,10 @@ namespace com.N8Dev.Allete.SceneManagement.Transitions
 
         protected override float GetTransitionAnimationLength() => TransitionLength;
 
-        protected override async void AnimateTransition()
-        {
+        protected override void AnimateFirstHalfTransition() => 
             Panel.DOFade(1f, GetTransitionAnimationLength() / 2);
-            await Task.Delay(TimeSpan.FromSeconds(GetTransitionAnimationLength() / 2));
+
+        protected override void AnimateSecondHalfTransition() => 
             Panel.DOFade(0f, GetTransitionAnimationLength() / 2);
-        }
     }
 }

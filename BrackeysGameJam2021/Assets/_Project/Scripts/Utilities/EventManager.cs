@@ -29,5 +29,11 @@ namespace com.N8Dev.Allete.Utilities
 
         public static void PlayerWin() =>
             OnPlayerWin?.Invoke();
+        
+        //Player Movement Events
+        public static event Action OnPlayerBarrier;
+
+        public static void PlayerBarrier() =>
+            OnPlayerBarrier?.Invoke();
     }
 }

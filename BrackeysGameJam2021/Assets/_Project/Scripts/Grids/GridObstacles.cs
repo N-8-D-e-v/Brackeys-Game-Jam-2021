@@ -21,7 +21,7 @@ namespace com.N8Dev.Allete.Grids
         {
             Sprite _tile = tilemap.GetSprite(_gridPos);
             for (int _i = 0; _i < _obstacles.Length; _i++)
-                if (_tile == _obstacles[_i])
+                if (_tile.name == _obstacles[_i].name)
                     return true;
 
             Collider2D[] _foundObstacles = Physics2D.OverlapCircleAll(_pos, checkRadius);

@@ -1,6 +1,7 @@
 ﻿using System;
 using com.N8Dev.Allete.AudioManagement;
 using com.N8Dev.Allete.Effects;
+using com.N8Dev.Allete.Utilities;
 using DG.Tweening;
 using UnityEngine;
 
@@ -28,8 +29,10 @@ namespace com.N8Dev.Allete.Movement
             Vector3 _edge = _position + (_targetPos - _position) / 4;
             Vector3[] _path = {_edge, _position};
             Transform.DOPath(_path, Duration);
+            
             Camera.main.ShakeCamera(CameraShake);
             Sound.Play();
+            EventManager.PlayerBarrier();
         }
     }
 }

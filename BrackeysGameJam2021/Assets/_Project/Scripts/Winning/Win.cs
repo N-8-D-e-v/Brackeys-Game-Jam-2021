@@ -23,7 +23,7 @@ namespace com.N8Dev.Allete.Winning
             hasWon = true;
             Sound.Play();
             EventManager.PlayerWin();
-            SceneManager.LoadNextScene();
+            this.Invoke(SceneManager.LoadNextScene, 0.5f);
         }
     }
 }

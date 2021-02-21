@@ -26,6 +26,5 @@ namespace com.N8Dev.Allete.Effects
 
         private void Start() => 
             transform.DOPath(path, Time, PathType.CatmullRom).SetLoops(-1);
-
     }
 }

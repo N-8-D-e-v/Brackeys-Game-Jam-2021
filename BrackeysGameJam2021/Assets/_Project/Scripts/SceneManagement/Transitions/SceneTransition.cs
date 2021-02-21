@@ -13,16 +13,23 @@ namespace com.N8Dev.Allete.SceneManagement.Transitions
 
         protected abstract float GetTransitionAnimationLength();
 
-        public void StartTransition()
+        public void FirstHalfTransition()
         {
             OnSceneTransitionStart?.Invoke();
-            AnimateTransition();
-            if (!(OnSceneTransitionEnd is null))
-                this.Invoke(OnSceneTransitionEnd, GetTransitionAnimationLength());
+            AnimateFirstHalfTransition();
             if (!(OnSceneTransitionMiddle is null))
                 this.Invoke(OnSceneTransitionMiddle, GetTransitionAnimationLength() / 2);
         }
 
-        protected abstract void AnimateTransition();
+        public void SecondHalfTransition()
+        {
+            AnimateSecondHalfTransition();
+            if (!(OnSceneTransitionEnd is null))
+                this.Invoke(OnSceneTransitionEnd, GetTransitionAnimationLength());
+        }
+
+        protected abstract void AnimateFirstHalfTransition();
+
+        protected abstract void AnimateSecondHalfTransition();
     }
 }

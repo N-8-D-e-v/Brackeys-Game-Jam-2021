@@ -31,6 +31,7 @@ namespace com.N8Dev.Allete.GameData
             playerMovesRemaining = PlayerMovesAllowed;
             numberOfPlayers = 1;
             runOutOfMovesSound = RunOutOfMovesSound;
+            hasPlayerWon = false;
 
             PlayerMovement.OnPlayerMove += PlayerMove;
             PlayerSplitting.OnPlayerSplit += PlayerSplit;
@@ -60,14 +61,14 @@ namespace com.N8Dev.Allete.GameData
         private static async void PlayerSplit()
         {
             //TODO don't hardcode this
-            await Task.Delay(TimeSpan.FromSeconds(0.3f));
+            await Task.Delay(TimeSpan.FromSeconds(0.2f));
             numberOfPlayers += 1;
         }
 
         private static async void PlayerCombine()
         {
             //TODO also don't hardcode this
-            await Task.Delay(TimeSpan.FromSeconds(0.3f));
+            await Task.Delay(TimeSpan.FromSeconds(0.2f));
             numberOfPlayers -= 1;
         }
     }

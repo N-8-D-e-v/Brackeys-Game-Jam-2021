@@ -1,5 +1,6 @@
 ﻿using com.N8Dev.Allete.SceneManagement.Transitions;
 using com.N8Dev.Allete.Utilities;
+using DG.Tweening;
 using UnityEngine;
 
 namespace com.N8Dev.Allete.SceneManagement
@@ -33,7 +34,7 @@ namespace com.N8Dev.Allete.SceneManagement
             if (isTransitioning)
                 return;
             targetScene = GetCurrentScene();
-            transition.StartTransition();
+            transition.FirstHalfTransition();
         }
 
         public static void LoadNextScene()
@@ -41,13 +42,16 @@ namespace com.N8Dev.Allete.SceneManagement
             if (isTransitioning)
                 return;
             targetScene = GetCurrentScene() + 1;
-            transition.StartTransition();
+            transition.FirstHalfTransition();
         }
 
         private static int GetCurrentScene() => 
             UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex;
 
-        private static void LoadScene() => 
+        private static void LoadScene()
+        {
             UnityEngine.SceneManagement.SceneManager.LoadScene(targetScene);
+            transition.SecondHalfTransition();
+        }
     }
 }
